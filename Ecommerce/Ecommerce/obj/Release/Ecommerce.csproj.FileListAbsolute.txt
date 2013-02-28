@@ -1,0 +1,5 @@
+C:\Users\Gustavo\Desktop\Ecommerce\Ecommerce\bin\Ecommerce.dll
+C:\Users\Gustavo\Desktop\Ecommerce\Ecommerce\bin\Ecommerce.pdb
+C:\Users\Gustavo\Desktop\Ecommerce\Ecommerce\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Gustavo\Desktop\Ecommerce\Ecommerce\obj\Release\Ecommerce.dll
+C:\Users\Gustavo\Desktop\Ecommerce\Ecommerce\obj\Release\Ecommerce.pdb

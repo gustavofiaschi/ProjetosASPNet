@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" Namespace="EcommerceDatabase.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="EcommerceDatabaseTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="EcommerceDatabase" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="EcommerceDatabaseContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Usuario" EntityType="EcommerceDatabase.Usuario" />
+          <EntitySet Name="Pessoa" EntityType="EcommerceDatabase.Pessoa" />
+          <AssociationSet Name="PessoaUsuario" Association="EcommerceDatabase.PessoaUsuario">
+            <End Role="Pessoa" EntitySet="Pessoa" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <EntitySet Name="Produto" EntityType="EcommerceDatabase.Produto" />
+          <EntitySet Name="Pedido" EntityType="EcommerceDatabase.Pedido" />
+          <AssociationSet Name="PessoaPedido" Association="EcommerceDatabase.PessoaPedido">
+            <End Role="Pessoa" EntitySet="Pessoa" />
+            <End Role="Pedido" EntitySet="Pedido" />
+          </AssociationSet>
+          <AssociationSet Name="PedidoProduto" Association="EcommerceDatabase.PedidoProduto">
+            <End Role="Pedido" EntitySet="Pedido" />
+            <End Role="Produto" EntitySet="Produto" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Login" Nullable="false" />
+          <Property Type="Boolean" Name="Status" Nullable="false" />
+          <Property Type="String" Name="Senha" Nullable="false" />
+          <NavigationProperty Name="Pessoa" Relationship="EcommerceDatabase.PessoaUsuario" FromRole="Usuario" ToRole="Pessoa" />
+          <Property Type="Int32" Name="PessoaId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pessoa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nome" Nullable="false" />
+          <Property Type="DateTime" Name="DataNascimento" Nullable="true" />
+          <Property Type="String" Name="CPF" Nullable="false" />
+          <NavigationProperty Name="Usuarios" Relationship="EcommerceDatabase.PessoaUsuario" FromRole="Pessoa" ToRole="Usuario" />
+          <NavigationProperty Name="Pedidos" Relationship="EcommerceDatabase.PessoaPedido" FromRole="Pessoa" ToRole="Pedido" />
+        </EntityType>
+        <Association Name="PessoaUsuario">
+          <End Type="EcommerceDatabase.Pessoa" Role="Pessoa" Multiplicity="1" />
+          <End Type="EcommerceDatabase.Usuario" Role="Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pessoa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="PessoaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Produto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nome" Nullable="false" />
+          <Property Type="String" Name="Descricao" Nullable="false" />
+          <Property Type="Decimal" Name="Preco" Nullable="false" Scale="2" Precision="10" />
+          <Property Type="Int32" Name="QtdEstoque" Nullable="false" />
+          <NavigationProperty Name="Pedidos" Relationship="EcommerceDatabase.PedidoProduto" FromRole="Produto" ToRole="Pedido" />
+        </EntityType>
+        <EntityType Name="Pedido">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Data" Nullable="false" />
+          <NavigationProperty Name="Pessoa" Relationship="EcommerceDatabase.PessoaPedido" FromRole="Pedido" ToRole="Pessoa" />
+          <Property Type="Int32" Name="PessoaId" Nullable="false" />
+          <NavigationProperty Name="Produtos" Relationship="EcommerceDatabase.PedidoProduto" FromRole="Pedido" ToRole="Produto" />
+        </EntityType>
+        <Association Name="PessoaPedido">
+          <End Type="EcommerceDatabase.Pessoa" Role="Pessoa" Multiplicity="1" />
+          <End Type="EcommerceDatabase.Pedido" Role="Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pessoa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pedido">
+              <PropertyRef Name="PessoaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PedidoProduto">
+          <End Type="EcommerceDatabase.Pedido" Role="Pedido" Multiplicity="*" />
+          <End Type="EcommerceDatabase.Produto" Role="Produto" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="EcommerceDatabase" />
+        <Alias Key="Target" Value="EcommerceDatabase.Store" />
+        <EntityContainerMapping CdmEntityContainer="EcommerceDatabaseContainer" StorageEntityContainer="EcommerceDatabaseTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="EcommerceDatabase" >
+        <EntityTypeShape EntityType="EcommerceDatabase.Usuario" Width="1.5" PointX="1.875" PointY="1.75" Height="1.787985026041667" />
+        <EntityTypeShape EntityType="EcommerceDatabase.Pessoa" Width="1.5" PointX="4.75" PointY="1.125" Height="1.787985026041667" />
+        <AssociationConnector Association="EcommerceDatabase.PessoaUsuario">
+          <ConnectorPoint PointX="4.75" PointY="2.4276432291666667" />
+          <ConnectorPoint PointX="3.375" PointY="2.4276432291666667" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="EcommerceDatabase.Produto" Width="1.5" PointX="7" PointY="2.375" Height="1.9802864583333326" />
+        <EntityTypeShape EntityType="EcommerceDatabase.Pedido" Width="1.5" PointX="9.375" PointY="0.875" Height="1.4033821614583331" />
+        <AssociationConnector Association="EcommerceDatabase.PessoaPedido">
+          <ConnectorPoint PointX="6.25" PointY="1.8034833919270834" />
+          <ConnectorPoint PointX="9.375" PointY="1.8034833919270834" />
+        </AssociationConnector>
+        <AssociationConnector Association="EcommerceDatabase.PedidoProduto">
+          <ConnectorPoint PointX="9.375" PointY="2.6151432291666667" />
+          <ConnectorPoint PointX="8.5" PointY="2.6151432291666667" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
