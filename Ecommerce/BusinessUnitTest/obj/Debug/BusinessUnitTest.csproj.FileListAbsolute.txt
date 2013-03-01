@@ -1,0 +1,12 @@
+D:\ProjetosASPNet\Ecommerce\BusinessUnitTest\bin\Debug\BusinessUnitTest.dll
+D:\ProjetosASPNet\Ecommerce\BusinessUnitTest\bin\Debug\BusinessUnitTest.pdb
+D:\ProjetosASPNet\Ecommerce\BusinessUnitTest\bin\Debug\Ecommerce.Business.dll
+D:\ProjetosASPNet\Ecommerce\BusinessUnitTest\bin\Debug\Ecommerce.Common.dll
+D:\ProjetosASPNet\Ecommerce\BusinessUnitTest\bin\Debug\Ecommerce.Database.dll
+D:\ProjetosASPNet\Ecommerce\BusinessUnitTest\bin\Debug\Ecommerce.Business.pdb
+D:\ProjetosASPNet\Ecommerce\BusinessUnitTest\bin\Debug\Ecommerce.Common.pdb
+D:\ProjetosASPNet\Ecommerce\BusinessUnitTest\bin\Debug\Ecommerce.Database.pdb
+D:\ProjetosASPNet\Ecommerce\BusinessUnitTest\obj\Debug\ResolveAssemblyReference.cache
+D:\ProjetosASPNet\Ecommerce\BusinessUnitTest\obj\Debug\BusinessUnitTest.dll
+D:\ProjetosASPNet\Ecommerce\BusinessUnitTest\obj\Debug\BusinessUnitTest.pdb
+D:\ProjetosASPNet\Ecommerce\BusinessUnitTest\bin\Debug\BusinessUnitTest.dll.config

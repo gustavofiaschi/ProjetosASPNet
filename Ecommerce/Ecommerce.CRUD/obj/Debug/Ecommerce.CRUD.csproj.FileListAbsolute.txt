@@ -1,0 +1,7 @@
+D:\ProjetosASPNet\Ecommerce\Ecommerce.CRUD\bin\Ecommerce.CRUD.dll
+D:\ProjetosASPNet\Ecommerce\Ecommerce.CRUD\bin\Ecommerce.CRUD.pdb
+D:\ProjetosASPNet\Ecommerce\Ecommerce.CRUD\bin\Ecommerce.Database.dll
+D:\ProjetosASPNet\Ecommerce\Ecommerce.CRUD\bin\Ecommerce.Database.pdb
+D:\ProjetosASPNet\Ecommerce\Ecommerce.CRUD\obj\Debug\ResolveAssemblyReference.cache
+D:\ProjetosASPNet\Ecommerce\Ecommerce.CRUD\obj\Debug\Ecommerce.CRUD.dll
+D:\ProjetosASPNet\Ecommerce\Ecommerce.CRUD\obj\Debug\Ecommerce.CRUD.pdb

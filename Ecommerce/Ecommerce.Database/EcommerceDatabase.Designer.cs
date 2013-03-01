@@ -21,6 +21,7 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("EcommerceDatabase", "PessoaUsuario", "Pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Ecommerce.Database.Pessoa), "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Ecommerce.Database.Usuario), true)]
 [assembly: EdmRelationshipAttribute("EcommerceDatabase", "PessoaPedido", "Pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Ecommerce.Database.Pessoa), "Pedido", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Ecommerce.Database.Pedido), true)]
 [assembly: EdmRelationshipAttribute("EcommerceDatabase", "PedidoProduto", "Pedido", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Ecommerce.Database.Pedido), "Produto", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Ecommerce.Database.Produto))]
+[assembly: EdmRelationshipAttribute("EcommerceDatabase", "ProdutoCategoria", "Produto", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Ecommerce.Database.Produto), "Categoria", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Ecommerce.Database.Categoria), true)]
 
 #endregion
 
@@ -135,6 +136,22 @@ namespace Ecommerce.Database
             }
         }
         private ObjectSet<Pedido> _Pedido;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Categoria> Categoria
+        {
+            get
+            {
+                if ((_Categoria == null))
+                {
+                    _Categoria = base.CreateObjectSet<Categoria>("Categoria");
+                }
+                return _Categoria;
+            }
+        }
+        private ObjectSet<Categoria> _Categoria;
 
         #endregion
         #region AddTo Methods
@@ -170,6 +187,14 @@ namespace Ecommerce.Database
         {
             base.AddObject("Pedido", pedido);
         }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Categoria EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToCategoria(Categoria categoria)
+        {
+            base.AddObject("Categoria", categoria);
+        }
 
         #endregion
     }
@@ -178,6 +203,112 @@ namespace Ecommerce.Database
     #endregion
     
     #region Entities
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="EcommerceDatabase", Name="Categoria")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Categoria : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Categoria object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="nome">Initial value of the Nome property.</param>
+        public static Categoria CreateCategoria(global::System.Int32 id, global::System.String nome)
+        {
+            Categoria categoria = new Categoria();
+            categoria.Id = id;
+            categoria.Nome = nome;
+            return categoria;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Nome
+        {
+            get
+            {
+                return _Nome;
+            }
+            set
+            {
+                OnNomeChanging(value);
+                ReportPropertyChanging("Nome");
+                _Nome = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Nome");
+                OnNomeChanged();
+            }
+        }
+        private global::System.String _Nome;
+        partial void OnNomeChanging(global::System.String value);
+        partial void OnNomeChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EcommerceDatabase", "ProdutoCategoria", "Produto")]
+        public EntityCollection<Produto> Produtos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Produto>("EcommerceDatabase.ProdutoCategoria", "Produto");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Produto>("EcommerceDatabase.ProdutoCategoria", "Produto", value);
+                }
+            }
+        }
+
+        #endregion
+    }
     
     /// <summary>
     /// No Metadata Documentation available.
@@ -195,12 +326,14 @@ namespace Ecommerce.Database
         /// <param name="id">Initial value of the Id property.</param>
         /// <param name="data">Initial value of the Data property.</param>
         /// <param name="pessoaId">Initial value of the PessoaId property.</param>
-        public static Pedido CreatePedido(global::System.Int32 id, global::System.DateTime data, global::System.Int32 pessoaId)
+        /// <param name="status">Initial value of the Status property.</param>
+        public static Pedido CreatePedido(global::System.Int32 id, global::System.DateTime data, global::System.Int32 pessoaId, global::System.Int16 status)
         {
             Pedido pedido = new Pedido();
             pedido.Id = id;
             pedido.Data = data;
             pedido.PessoaId = pessoaId;
+            pedido.Status = status;
             return pedido;
         }
 
@@ -281,6 +414,30 @@ namespace Ecommerce.Database
         private global::System.Int32 _PessoaId;
         partial void OnPessoaIdChanging(global::System.Int32 value);
         partial void OnPessoaIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int16 Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
+            }
+        }
+        private global::System.Int16 _Status;
+        partial void OnStatusChanging(global::System.Int16 value);
+        partial void OnStatusChanged();
 
         #endregion
     
@@ -545,7 +702,8 @@ namespace Ecommerce.Database
         /// <param name="descricao">Initial value of the Descricao property.</param>
         /// <param name="preco">Initial value of the Preco property.</param>
         /// <param name="qtdEstoque">Initial value of the QtdEstoque property.</param>
-        public static Produto CreateProduto(global::System.Int32 id, global::System.String nome, global::System.String descricao, global::System.Decimal preco, global::System.Int32 qtdEstoque)
+        /// <param name="categoriaId">Initial value of the CategoriaId property.</param>
+        public static Produto CreateProduto(global::System.Int32 id, global::System.String nome, global::System.String descricao, global::System.Decimal preco, global::System.Int32 qtdEstoque, global::System.Int32 categoriaId)
         {
             Produto produto = new Produto();
             produto.Id = id;
@@ -553,6 +711,7 @@ namespace Ecommerce.Database
             produto.Descricao = descricao;
             produto.Preco = preco;
             produto.QtdEstoque = qtdEstoque;
+            produto.CategoriaId = categoriaId;
             return produto;
         }
 
@@ -681,6 +840,30 @@ namespace Ecommerce.Database
         private global::System.Int32 _QtdEstoque;
         partial void OnQtdEstoqueChanging(global::System.Int32 value);
         partial void OnQtdEstoqueChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 CategoriaId
+        {
+            get
+            {
+                return _CategoriaId;
+            }
+            set
+            {
+                OnCategoriaIdChanging(value);
+                ReportPropertyChanging("CategoriaId");
+                _CategoriaId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CategoriaId");
+                OnCategoriaIdChanged();
+            }
+        }
+        private global::System.Int32 _CategoriaId;
+        partial void OnCategoriaIdChanging(global::System.Int32 value);
+        partial void OnCategoriaIdChanged();
 
         #endregion
     
@@ -707,6 +890,44 @@ namespace Ecommerce.Database
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EcommerceDatabase", "ProdutoCategoria", "Categoria")]
+        public Categoria Categoria
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Categoria>("EcommerceDatabase.ProdutoCategoria", "Categoria").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Categoria>("EcommerceDatabase.ProdutoCategoria", "Categoria").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Categoria> CategoriaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Categoria>("EcommerceDatabase.ProdutoCategoria", "Categoria");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Categoria>("EcommerceDatabase.ProdutoCategoria", "Categoria", value);
+                }
+            }
+        }
 
         #endregion
     }
@@ -729,7 +950,7 @@ namespace Ecommerce.Database
         /// <param name="status">Initial value of the Status property.</param>
         /// <param name="senha">Initial value of the Senha property.</param>
         /// <param name="pessoaId">Initial value of the PessoaId property.</param>
-        public static Usuario CreateUsuario(global::System.Int32 id, global::System.String login, global::System.Boolean status, global::System.String senha, global::System.Int32 pessoaId)
+        public static Usuario CreateUsuario(global::System.Int32 id, global::System.String login, global::System.Int16 status, global::System.String senha, global::System.Int32 pessoaId)
         {
             Usuario usuario = new Usuario();
             usuario.Id = id;
@@ -799,7 +1020,7 @@ namespace Ecommerce.Database
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Boolean Status
+        public global::System.Int16 Status
         {
             get
             {
@@ -814,8 +1035,8 @@ namespace Ecommerce.Database
                 OnStatusChanged();
             }
         }
-        private global::System.Boolean _Status;
-        partial void OnStatusChanging(global::System.Boolean value);
+        private global::System.Int16 _Status;
+        partial void OnStatusChanging(global::System.Int16 value);
         partial void OnStatusChanged();
     
         /// <summary>

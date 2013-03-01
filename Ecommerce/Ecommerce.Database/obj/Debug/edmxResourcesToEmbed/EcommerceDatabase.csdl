@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="EcommerceDatabase" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="EcommerceDatabaseContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Usuario" EntityType="EcommerceDatabase.Usuario" />
+    <EntitySet Name="Pessoa" EntityType="EcommerceDatabase.Pessoa" />
+    <AssociationSet Name="PessoaUsuario" Association="EcommerceDatabase.PessoaUsuario">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <EntitySet Name="Produto" EntityType="EcommerceDatabase.Produto" />
+    <EntitySet Name="Pedido" EntityType="EcommerceDatabase.Pedido" />
+    <AssociationSet Name="PessoaPedido" Association="EcommerceDatabase.PessoaPedido">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="PedidoProduto" Association="EcommerceDatabase.PedidoProduto">
+      <End Role="Pedido" EntitySet="Pedido" />
+      <End Role="Produto" EntitySet="Produto" />
+    </AssociationSet>
+    <EntitySet Name="Categoria" EntityType="EcommerceDatabase.Categoria" />
+    <AssociationSet Name="ProdutoCategoria" Association="EcommerceDatabase.ProdutoCategoria">
+      <End Role="Produto" EntitySet="Produto" />
+      <End Role="Categoria" EntitySet="Categoria" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Login" Nullable="false" />
+    <Property Type="Int16" Name="Status" Nullable="false" />
+    <Property Type="String" Name="Senha" Nullable="false" />
+    <NavigationProperty Name="Pessoa" Relationship="EcommerceDatabase.PessoaUsuario" FromRole="Usuario" ToRole="Pessoa" />
+    <Property Type="Int32" Name="PessoaId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pessoa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Nome" Nullable="false" />
+    <Property Type="DateTime" Name="DataNascimento" Nullable="true" />
+    <Property Type="String" Name="CPF" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="EcommerceDatabase.PessoaUsuario" FromRole="Pessoa" ToRole="Usuario" />
+    <NavigationProperty Name="Pedidos" Relationship="EcommerceDatabase.PessoaPedido" FromRole="Pessoa" ToRole="Pedido" />
+  </EntityType>
+  <Association Name="PessoaUsuario">
+    <End Type="EcommerceDatabase.Pessoa" Role="Pessoa" Multiplicity="1" />
+    <End Type="EcommerceDatabase.Usuario" Role="Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Produto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Nome" Nullable="false" />
+    <Property Type="String" Name="Descricao" Nullable="false" />
+    <Property Type="Decimal" Name="Preco" Nullable="false" Scale="2" Precision="10" />
+    <Property Type="Int32" Name="QtdEstoque" Nullable="false" />
+    <NavigationProperty Name="Pedidos" Relationship="EcommerceDatabase.PedidoProduto" FromRole="Produto" ToRole="Pedido" />
+    <NavigationProperty Name="Categoria" Relationship="EcommerceDatabase.ProdutoCategoria" FromRole="Produto" ToRole="Categoria" />
+    <Property Type="Int32" Name="CategoriaId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pedido">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="Data" Nullable="false" />
+    <NavigationProperty Name="Pessoa" Relationship="EcommerceDatabase.PessoaPedido" FromRole="Pedido" ToRole="Pessoa" />
+    <Property Type="Int32" Name="PessoaId" Nullable="false" />
+    <NavigationProperty Name="Produtos" Relationship="EcommerceDatabase.PedidoProduto" FromRole="Pedido" ToRole="Produto" />
+    <Property Type="Int16" Name="Status" Nullable="false" />
+  </EntityType>
+  <Association Name="PessoaPedido">
+    <End Type="EcommerceDatabase.Pessoa" Role="Pessoa" Multiplicity="1" />
+    <End Type="EcommerceDatabase.Pedido" Role="Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PedidoProduto">
+    <End Type="EcommerceDatabase.Pedido" Role="Pedido" Multiplicity="*" />
+    <End Type="EcommerceDatabase.Produto" Role="Produto" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Nome" Nullable="false" />
+    <NavigationProperty Name="Produtos" Relationship="EcommerceDatabase.ProdutoCategoria" FromRole="Categoria" ToRole="Produto" />
+  </EntityType>
+  <Association Name="ProdutoCategoria">
+    <End Type="EcommerceDatabase.Produto" Role="Produto" Multiplicity="*" />
+    <End Type="EcommerceDatabase.Categoria" Role="Categoria" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Produto">
+        <PropertyRef Name="CategoriaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

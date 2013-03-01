@@ -3,3 +3,8 @@ C:\Users\Gustavo\Desktop\Ecommerce\Ecommerce\bin\Ecommerce.pdb
 C:\Users\Gustavo\Desktop\Ecommerce\Ecommerce\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Gustavo\Desktop\Ecommerce\Ecommerce\obj\Debug\Ecommerce.dll
 C:\Users\Gustavo\Desktop\Ecommerce\Ecommerce\obj\Debug\Ecommerce.pdb
+D:\ProjetosASPNet\Ecommerce\Ecommerce\bin\Ecommerce.dll
+D:\ProjetosASPNet\Ecommerce\Ecommerce\bin\Ecommerce.pdb
+D:\ProjetosASPNet\Ecommerce\Ecommerce\obj\Debug\ResolveAssemblyReference.cache
+D:\ProjetosASPNet\Ecommerce\Ecommerce\obj\Debug\Ecommerce.dll
+D:\ProjetosASPNet\Ecommerce\Ecommerce\obj\Debug\Ecommerce.pdb

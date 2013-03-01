@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="77ea900f-1540-49e6-a091-c3322dc38b35" name="Gustavo@GUSTAVO-NOTE 2013-02-28 22:23:11" runUser="Gustavo-Note\Gustavo" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="fec501d8-e947-41ff-8e2c-7c9374fba82e">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Gustavo_GUSTAVO-NOTE 2013-02-28 22_23_11">
+      <DeploymentItem filename="D:\ProjetosASPNet\Ecommerce\Ecommerce.Common\bin\Debug\Ecommerce.Common.dll" />
+      <DeploymentItem filename="D:\ProjetosASPNet\Ecommerce\Ecommerce.Database\bin\Debug\Ecommerce.Database.dll" />
+      <DeploymentItem filename="D:\ProjetosASPNet\Ecommerce\Ecommerce.Business\bin\Debug\Ecommerce.Business.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-02-28T22:23:11.5841337-03:00" queuing="2013-02-28T22:23:15.8043751-03:00" start="2013-02-28T22:23:16.3044037-03:00" finish="2013-02-28T22:26:19.2528678-03:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="2" executed="2" passed="2" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="ListarUsuariosTest" storage="d:\projetosaspnet\ecommerce\businessunittest\bin\debug\businessunittest.dll" id="fe0d0762-543e-2d8b-9eae-769d88622431">
+      <Execution id="70d54911-85d6-495f-9646-a70a968b7032" />
+      <TestMethod codeBase="D:/ProjetosASPNet/Ecommerce/BusinessUnitTest/bin/Debug/BusinessUnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BusinessUnitTest.UsuarioBusinessTest, BusinessUnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ListarUsuariosTest" />
+    </UnitTest>
+    <UnitTest name="UsuarioBusinessConstructorTest" storage="d:\projetosaspnet\ecommerce\businessunittest\bin\debug\businessunittest.dll" id="65e72eb7-bf95-07e6-ed9b-7fe78c2a40ff">
+      <Execution id="6db5ab81-0124-40a3-8034-6010564a44a0" />
+      <TestMethod codeBase="D:/ProjetosASPNet/Ecommerce/BusinessUnitTest/bin/Debug/BusinessUnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BusinessUnitTest.UsuarioBusinessTest, BusinessUnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="UsuarioBusinessConstructorTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="65e72eb7-bf95-07e6-ed9b-7fe78c2a40ff" executionId="6db5ab81-0124-40a3-8034-6010564a44a0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fe0d0762-543e-2d8b-9eae-769d88622431" executionId="70d54911-85d6-495f-9646-a70a968b7032" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="6db5ab81-0124-40a3-8034-6010564a44a0" testId="65e72eb7-bf95-07e6-ed9b-7fe78c2a40ff" testName="UsuarioBusinessConstructorTest" computerName="GUSTAVO-NOTE" duration="00:00:01.0142168" startTime="2013-02-28T22:23:16.6674245-03:00" endTime="2013-02-28T22:23:19.3175761-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6db5ab81-0124-40a3-8034-6010564a44a0">
+    </UnitTestResult>
+    <UnitTestResult executionId="70d54911-85d6-495f-9646-a70a968b7032" testId="fe0d0762-543e-2d8b-9eae-769d88622431" testName="ListarUsuariosTest" computerName="GUSTAVO-NOTE" duration="00:02:57.6679323" startTime="2013-02-28T22:23:19.3395773-03:00" endTime="2013-02-28T22:26:17.4957673-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="70d54911-85d6-495f-9646-a70a968b7032">
+    </UnitTestResult>
+  </Results>
+</TestRun>
