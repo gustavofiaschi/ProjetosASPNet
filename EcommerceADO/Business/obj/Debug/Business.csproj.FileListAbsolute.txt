@@ -7,3 +7,12 @@ C:\Users\Gustavo\Desktop\EcommerceADO\Business\obj\Debug\Business.dll
 C:\Users\Gustavo\Desktop\EcommerceADO\Business\obj\Debug\Business.pdb
 C:\Users\Gustavo\Desktop\EcommerceADO\Business\bin\Debug\DataAccess.dll
 C:\Users\Gustavo\Desktop\EcommerceADO\Business\bin\Debug\DataAccess.pdb
+D:\ProjetosASPNet\EcommerceADO\Business\bin\Debug\Business.dll
+D:\ProjetosASPNet\EcommerceADO\Business\bin\Debug\Business.pdb
+D:\ProjetosASPNet\EcommerceADO\Business\bin\Debug\DataAccess.dll
+D:\ProjetosASPNet\EcommerceADO\Business\bin\Debug\Model.dll
+D:\ProjetosASPNet\EcommerceADO\Business\bin\Debug\DataAccess.pdb
+D:\ProjetosASPNet\EcommerceADO\Business\bin\Debug\Model.pdb
+D:\ProjetosASPNet\EcommerceADO\Business\obj\Debug\ResolveAssemblyReference.cache
+D:\ProjetosASPNet\EcommerceADO\Business\obj\Debug\Business.dll
+D:\ProjetosASPNet\EcommerceADO\Business\obj\Debug\Business.pdb

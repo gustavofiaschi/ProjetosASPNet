@@ -22,5 +22,6 @@ namespace Model
         public DateTime DataNascimento { get; set; }
         public string CPF { get; set; }
         public string Nome { get; set; }
+        public string NomeFoto { get; set; }
     }
 }

@@ -5,3 +5,10 @@ C:\Users\Gustavo\Desktop\EcommerceADO\DataAccess\bin\Debug\Model.pdb
 C:\Users\Gustavo\Desktop\EcommerceADO\DataAccess\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Gustavo\Desktop\EcommerceADO\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\Gustavo\Desktop\EcommerceADO\DataAccess\obj\Debug\DataAccess.pdb
+D:\ProjetosASPNet\EcommerceADO\DataAccess\bin\Debug\DataAccess.dll
+D:\ProjetosASPNet\EcommerceADO\DataAccess\bin\Debug\DataAccess.pdb
+D:\ProjetosASPNet\EcommerceADO\DataAccess\bin\Debug\Model.dll
+D:\ProjetosASPNet\EcommerceADO\DataAccess\bin\Debug\Model.pdb
+D:\ProjetosASPNet\EcommerceADO\DataAccess\obj\Debug\ResolveAssemblyReference.cache
+D:\ProjetosASPNet\EcommerceADO\DataAccess\obj\Debug\DataAccess.dll
+D:\ProjetosASPNet\EcommerceADO\DataAccess\obj\Debug\DataAccess.pdb

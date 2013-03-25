@@ -31,7 +31,7 @@ namespace Business
 
         public List<Pessoa> RetornaPessoas()
         {
-            return new PessoaBusiness().RetornaPessoas();
+            return new PessoaDataAccess().RetornaPessoas();
         }
     }
 }

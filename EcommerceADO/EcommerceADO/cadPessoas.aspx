@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cadPessoas.aspx.cs" Inherits="EcommerceADO.cadPessoas" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -10,7 +11,11 @@
 <asp:Label ID="lblDataNasc" runat="server" AssociatedControlID="txtDataNasc" 
     Text="Data Nascimento"></asp:Label>
 &nbsp;
-<asp:TextBox ID="txtDataNasc" runat="server"></asp:TextBox>
+<asp:TextBox ID="txtDataNasc" runat="server">
+</asp:TextBox>
+    <asp:CalendarExtender ID="txtDataNasc_CalendarExtender" runat="server" 
+        Enabled="True" TargetControlID="txtDataNasc">
+    </asp:CalendarExtender>
 <br />
 <asp:Label ID="lblCPF" runat="server" AssociatedControlID="txtCPF" Text="CPF"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -27,6 +32,8 @@
 <asp:Label ID="lblMsg" runat="server" ForeColor="Red"></asp:Label>
 <br />
 <br />
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
 <br />
 <br />
 </asp:Content>

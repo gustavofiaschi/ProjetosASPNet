@@ -49,6 +49,15 @@ namespace EcommerceADO {
         protected global::System.Web.UI.WebControls.TextBox txtDataNasc;
         
         /// <summary>
+        /// txtDataNasc_CalendarExtender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender txtDataNasc_CalendarExtender;
+        
+        /// <summary>
         /// lblCPF control.
         /// </summary>
         /// <remarks>
@@ -92,5 +101,14 @@ namespace EcommerceADO {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMsg;
+        
+        /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
     }
 }

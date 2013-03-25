@@ -9,3 +9,14 @@ C:\Users\Gustavo\Desktop\EcommerceADO\EcommerceADO\bin\Business.dll
 C:\Users\Gustavo\Desktop\EcommerceADO\EcommerceADO\bin\DataAccess.dll
 C:\Users\Gustavo\Desktop\EcommerceADO\EcommerceADO\bin\Business.pdb
 C:\Users\Gustavo\Desktop\EcommerceADO\EcommerceADO\bin\DataAccess.pdb
+D:\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\EcommerceADO.dll
+D:\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\EcommerceADO.pdb
+D:\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\Business.dll
+D:\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\Model.dll
+D:\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\DataAccess.dll
+D:\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\Business.pdb
+D:\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\Model.pdb
+D:\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\DataAccess.pdb
+D:\ProjetosASPNet\EcommerceADO\EcommerceADO\obj\Debug\ResolveAssemblyReference.cache
+D:\ProjetosASPNet\EcommerceADO\EcommerceADO\obj\Debug\EcommerceADO.dll
+D:\ProjetosASPNet\EcommerceADO\EcommerceADO\obj\Debug\EcommerceADO.pdb

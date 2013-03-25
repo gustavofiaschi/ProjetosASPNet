@@ -16,11 +16,12 @@ namespace DataAccess
 
         public void Salvar(Pessoa pessoa)
         {
-            SqlCommand cmd = new SqlCommand("Insert into Pessoa (Nome, CPF, DataNascimento) values (@Nome, @CPF, @DataNascimento)", this.Connection);
+            SqlCommand cmd = new SqlCommand("Insert into Pessoa (Nome, CPF, DataNascimento, NomeFoto) values (@Nome, @CPF, @DataNascimento, @NomeFoto)", this.Connection);
             
             cmd.Parameters.AddWithValue("@Nome", pessoa.Nome);
             cmd.Parameters.AddWithValue("@CPF", pessoa.CPF);
             cmd.Parameters.AddWithValue("@DataNascimento", pessoa.DataNascimento);
+            cmd.Parameters.AddWithValue("@NomeFoto", pessoa.NomeFoto);
 
             this.Connect();
             int linhas = cmd.ExecuteNonQuery();
@@ -43,6 +44,7 @@ namespace DataAccess
                 pessoa.CPF = dr["CPF"].ToString();
                 pessoa.DataNascimento = Convert.ToDateTime(dr["DataNascimento"]);
                 pessoa.Id = int.Parse(dr["Id"].ToString());
+                pessoa.NomeFoto = dr["NomeFoto"] == null ? string.Empty : dr["NomeFoto"].ToString();
 
                 listaPessoas.Add(pessoa);
             }
