@@ -8,3 +8,10 @@ D:\ProjetosASPNet\EcommerceADO\Model\bin\Debug\Model.pdb
 D:\ProjetosASPNet\EcommerceADO\Model\obj\Debug\ResolveAssemblyReference.cache
 D:\ProjetosASPNet\EcommerceADO\Model\obj\Debug\Model.dll
 D:\ProjetosASPNet\EcommerceADO\Model\obj\Debug\Model.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\Model\bin\Debug\Model.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\Model\bin\Debug\Model.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\Model\bin\Debug\Common.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\Model\bin\Debug\Common.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+E:\Projetos\ProjetosASPNet\EcommerceADO\Model\obj\Debug\Model.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\Model\obj\Debug\Model.pdb

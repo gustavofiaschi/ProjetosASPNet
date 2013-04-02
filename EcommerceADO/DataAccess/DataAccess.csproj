@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexao.cs" />
+    <Compile Include="UsuarioDataAccess.cs" />
     <Compile Include="PessoaDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -48,6 +49,10 @@
     <Content Include="EcommerceDatabase.edmx.sql" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{5AD4F2B3-1A76-480E-B4B4-DA66A0FB17D9}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{ADC02234-5F49-44E5-8534-9CBE1572D21C}</Project>
       <Name>Model</Name>

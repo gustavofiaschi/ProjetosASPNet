@@ -12,3 +12,7 @@ D:\ProjetosASPNet\EcommerceADO\Common\bin\Debug\Model.pdb
 D:\ProjetosASPNet\EcommerceADO\Common\obj\Debug\ResolveAssemblyReference.cache
 D:\ProjetosASPNet\EcommerceADO\Common\obj\Debug\Common.dll
 D:\ProjetosASPNet\EcommerceADO\Common\obj\Debug\Common.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\Common\bin\Debug\Common.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\Common\bin\Debug\Common.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\Common\obj\Debug\Common.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\Common\obj\Debug\Common.pdb

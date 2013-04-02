@@ -20,3 +20,16 @@ D:\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\DataAccess.pdb
 D:\ProjetosASPNet\EcommerceADO\EcommerceADO\obj\Debug\ResolveAssemblyReference.cache
 D:\ProjetosASPNet\EcommerceADO\EcommerceADO\obj\Debug\EcommerceADO.dll
 D:\ProjetosASPNet\EcommerceADO\EcommerceADO\obj\Debug\EcommerceADO.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\EcommerceADO.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\EcommerceADO.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\Business.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\Common.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\Model.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\DataAccess.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\Business.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\Common.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\Model.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\DataAccess.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\EcommerceADO\obj\Debug\EcommerceADO.csprojResolveAssemblyReference.cache
+E:\Projetos\ProjetosASPNet\EcommerceADO\EcommerceADO\obj\Debug\EcommerceADO.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\EcommerceADO\obj\Debug\EcommerceADO.pdb

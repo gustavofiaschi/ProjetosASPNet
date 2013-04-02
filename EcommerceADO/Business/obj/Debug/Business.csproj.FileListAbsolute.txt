@@ -16,3 +16,14 @@ D:\ProjetosASPNet\EcommerceADO\Business\bin\Debug\Model.pdb
 D:\ProjetosASPNet\EcommerceADO\Business\obj\Debug\ResolveAssemblyReference.cache
 D:\ProjetosASPNet\EcommerceADO\Business\obj\Debug\Business.dll
 D:\ProjetosASPNet\EcommerceADO\Business\obj\Debug\Business.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+E:\Projetos\ProjetosASPNet\EcommerceADO\Business\obj\Debug\Business.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\Business\obj\Debug\Business.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\Business\bin\Debug\Business.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\Business\bin\Debug\Business.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\Business\bin\Debug\Common.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\Business\bin\Debug\DataAccess.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\Business\bin\Debug\Model.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\Business\bin\Debug\Common.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\Business\bin\Debug\DataAccess.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\Business\bin\Debug\Model.pdb

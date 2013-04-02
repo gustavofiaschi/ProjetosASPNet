@@ -40,10 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UsuarioBusiness.cs" />
     <Compile Include="PessoaBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{5AD4F2B3-1A76-480E-B4B4-DA66A0FB17D9}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{A92FD53B-5E6C-48CC-9AD1-179C8C988BCD}</Project>
       <Name>DataAccess</Name>
