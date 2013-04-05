@@ -59,6 +59,10 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="App_Themes\Blue\Site.css" />
+    <Content Include="App_Themes\Green\Site.css" />
+    <Content Include="App_Themes\Padrao\Site.css" />
+    <Content Include="App_Themes\Red\Site.css" />
     <Content Include="cadPessoas.aspx" />
     <Content Include="cadUsuarios.aspx" />
     <Content Include="ListaPessoas.aspx" />
@@ -181,6 +185,18 @@
       <Project>{ADC02234-5F49-44E5-8534-9CBE1572D21C}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Padrao\Padrao.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Blue\Blue.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Green\Green.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Red\Red.skin" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

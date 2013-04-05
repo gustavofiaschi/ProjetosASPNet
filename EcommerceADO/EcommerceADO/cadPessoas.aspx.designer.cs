@@ -13,6 +13,15 @@ namespace EcommerceADO {
     public partial class cadPessoas {
         
         /// <summary>
+        /// ValidationSummary1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        
+        /// <summary>
         /// lblNome control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace EcommerceADO {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNome;
+        
+        /// <summary>
+        /// rqfNome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqfNome;
         
         /// <summary>
         /// lblDataNasc control.
@@ -58,6 +76,15 @@ namespace EcommerceADO {
         protected global::AjaxControlToolkit.CalendarExtender txtDataNasc_CalendarExtender;
         
         /// <summary>
+        /// cvDataNascimento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cvDataNascimento;
+        
+        /// <summary>
         /// lblCPF control.
         /// </summary>
         /// <remarks>
@@ -76,6 +103,15 @@ namespace EcommerceADO {
         protected global::System.Web.UI.WebControls.TextBox txtCPF;
         
         /// <summary>
+        /// revCPF control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revCPF;
+        
+        /// <summary>
         /// uploadFoto control.
         /// </summary>
         /// <remarks>
@@ -92,6 +128,15 @@ namespace EcommerceADO {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSalvar;
+        
+        /// <summary>
+        /// btnValidar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnValidar;
         
         /// <summary>
         /// lblMsg control.

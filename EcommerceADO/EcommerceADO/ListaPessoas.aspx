@@ -10,7 +10,7 @@
             <asp:BoundField DataField="Nome" HeaderText="Nome" NullDisplayText="---" 
                 SortExpression="Nome" />
             <asp:BoundField DataField="CPF" HeaderText="CPF" SortExpression="CPF" />
-            <asp:BoundField DataField="DataNascimento" DataFormatString="d" 
+            <asp:BoundField DataField="DataNascimento" DataFormatString="{0:d}" 
                 HeaderText="DataNascimento" SortExpression="DataNascimento" />
             <asp:ImageField DataImageUrlField="NomeFoto" 
                 DataImageUrlFormatString="~/Imagens/Fotos/{0}" HeaderText="Foto">

@@ -33,3 +33,5 @@ E:\Projetos\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\DataAccess.pdb
 E:\Projetos\ProjetosASPNet\EcommerceADO\EcommerceADO\obj\Debug\EcommerceADO.csprojResolveAssemblyReference.cache
 E:\Projetos\ProjetosASPNet\EcommerceADO\EcommerceADO\obj\Debug\EcommerceADO.dll
 E:\Projetos\ProjetosASPNet\EcommerceADO\EcommerceADO\obj\Debug\EcommerceADO.pdb
+D:\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\Common.dll
+D:\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\Common.pdb

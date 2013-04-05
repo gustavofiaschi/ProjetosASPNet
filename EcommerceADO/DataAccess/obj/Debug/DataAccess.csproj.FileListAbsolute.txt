@@ -21,3 +21,5 @@ E:\Projetos\ProjetosASPNet\EcommerceADO\DataAccess\bin\Debug\Model.pdb
 E:\Projetos\ProjetosASPNet\EcommerceADO\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 E:\Projetos\ProjetosASPNet\EcommerceADO\DataAccess\obj\Debug\DataAccess.dll
 E:\Projetos\ProjetosASPNet\EcommerceADO\DataAccess\obj\Debug\DataAccess.pdb
+D:\ProjetosASPNet\EcommerceADO\DataAccess\bin\Debug\Common.dll
+D:\ProjetosASPNet\EcommerceADO\DataAccess\bin\Debug\Common.pdb

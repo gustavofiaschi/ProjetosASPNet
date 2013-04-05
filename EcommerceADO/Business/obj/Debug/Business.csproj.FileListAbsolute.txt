@@ -27,3 +27,5 @@ E:\Projetos\ProjetosASPNet\EcommerceADO\Business\bin\Debug\Model.dll
 E:\Projetos\ProjetosASPNet\EcommerceADO\Business\bin\Debug\Common.pdb
 E:\Projetos\ProjetosASPNet\EcommerceADO\Business\bin\Debug\DataAccess.pdb
 E:\Projetos\ProjetosASPNet\EcommerceADO\Business\bin\Debug\Model.pdb
+D:\ProjetosASPNet\EcommerceADO\Business\bin\Debug\Common.dll
+D:\ProjetosASPNet\EcommerceADO\Business\bin\Debug\Common.pdb
