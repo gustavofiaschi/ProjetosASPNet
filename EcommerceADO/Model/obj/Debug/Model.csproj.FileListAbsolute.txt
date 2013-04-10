@@ -17,3 +17,10 @@ E:\Projetos\ProjetosASPNet\EcommerceADO\Model\obj\Debug\Model.dll
 E:\Projetos\ProjetosASPNet\EcommerceADO\Model\obj\Debug\Model.pdb
 D:\ProjetosASPNet\EcommerceADO\Model\bin\Debug\Common.dll
 D:\ProjetosASPNet\EcommerceADO\Model\bin\Debug\Common.pdb
+C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\Model\bin\Debug\Model.dll
+C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\Model\bin\Debug\Model.pdb
+C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\Model\bin\Debug\Common.dll
+C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\Model\bin\Debug\Common.pdb
+C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\Model\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\Model\obj\Debug\Model.dll
+C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\Model\obj\Debug\Model.pdb

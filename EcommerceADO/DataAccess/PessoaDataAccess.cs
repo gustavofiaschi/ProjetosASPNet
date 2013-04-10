@@ -51,5 +51,41 @@ namespace DataAccess
 
             return listaPessoas;
         }
+
+        public Pessoa RetornaPessoa(int idPessoa)
+        {
+            SqlCommand cmd = new SqlCommand("Select * From Pessoa where Id = @id", this.Connection);
+            cmd.Parameters.AddWithValue("@id", idPessoa);
+
+            this.Connect();
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            Pessoa pessoa = new Pessoa();
+            
+            while (dr.Read())
+            {                
+                pessoa.Nome = dr["Nome"].ToString();
+                pessoa.CPF = dr["CPF"].ToString();
+                pessoa.DataNascimento = Convert.ToDateTime(dr["DataNascimento"]);
+                pessoa.Id = int.Parse(dr["Id"].ToString());
+                pessoa.NomeFoto = dr["NomeFoto"] == null ? string.Empty : dr["NomeFoto"].ToString();
+            }
+
+            return pessoa;
+        }
+
+        public void Atualizar(Pessoa pessoa)
+        {
+            SqlCommand cmd = new SqlCommand("Update Pessoa set Nome = @Nome, CPF = @CPF, DataNascimento = @DataNasc, NomeFoto = @NomeFoto where Id = @Id", this.Connection);
+            cmd.Parameters.AddWithValue("@Nome", pessoa.Nome);
+            cmd.Parameters.AddWithValue("@CPF", pessoa.CPF);
+            cmd.Parameters.AddWithValue("@DataNasc", pessoa.DataNascimento);
+            cmd.Parameters.AddWithValue("@NomeFoto", pessoa.NomeFoto);
+            cmd.Parameters.AddWithValue("@Id", pessoa.Id);
+
+            this.Connect();
+            cmd.ExecuteNonQuery();
+            this.Disconnect();
+        }
     }
 }

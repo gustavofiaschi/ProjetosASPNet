@@ -26,12 +26,29 @@ namespace Business
             }
 
             PessoaDataAccess access = new PessoaDataAccess();
-            access.Salvar(pessoa);
+            //Verificação do id para Salvar/Atualizar
+            if (pessoa.Id == 0)
+                access.Salvar(pessoa);
+            else if (pessoa.Id > 0)
+                access.Atualizar(pessoa);
         }
 
         public List<Pessoa> RetornaPessoas()
         {
             return new PessoaDataAccess().RetornaPessoas();
+        }
+
+        public Pessoa RetornaPessoa(int idPessoa)
+        {
+            if (idPessoa > 0)
+            {
+                PessoaDataAccess access = new PessoaDataAccess();
+                return access.RetornaPessoa(idPessoa);
+            }
+            else
+            {
+                throw new Exception("Id da pessoa é 0.");
+            }
         }
     }
 }

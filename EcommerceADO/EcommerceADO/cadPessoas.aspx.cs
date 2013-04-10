@@ -13,6 +13,18 @@ namespace EcommerceADO
 {
     public partial class cadPessoas : System.Web.UI.Page
     {
+        public int IdPessoa
+        {
+            get { return (int)ViewState["IdPessoa"]; }
+            set { ViewState["IdPessoa"] = value; }
+        }
+
+        public string nomeFoto
+        {
+            get { return (string)ViewState["nomeFoto"]; }
+            set { ViewState["nomeFoto"] = value; }
+        }
+
         protected override void OnPreInit(EventArgs e)
         {
             base.OnPreInit(e);
@@ -44,6 +56,21 @@ namespace EcommerceADO
         {
             //Forma de acesso as configurações da aplicação web
             //string configuracao = ConfigurationManager.ConnectionStrings["ApplicationServices"].ConnectionString;
+
+            //Recuperação da QueryString [id]
+            if (!IsPostBack)
+            {
+                if (Request.QueryString["id"] != null)
+                {
+                    this.IdPessoa = int.Parse(Request.QueryString["id"]);
+                    CarregaCampos();
+                }
+                else
+                {
+                    this.IdPessoa = 0;
+                    this.nomeFoto = string.Empty;
+                }
+            }
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
@@ -56,16 +83,21 @@ namespace EcommerceADO
                     pessoa.Nome = txtNome.Text;
                     pessoa.DataNascimento = DateTime.Parse(txtDataNasc.Text);
                     pessoa.CPF = txtCPF.Text;
+                    pessoa.NomeFoto = this.nomeFoto;
+                    pessoa.Id = this.IdPessoa;
 
-                    string nomeArquivo = uploadFoto.FileName;
-                    string caminhoArquivo = Path.Combine(MapPath("~/Imagens/Fotos"), nomeArquivo);
-                    uploadFoto.SaveAs(caminhoArquivo);
+                    if (uploadFoto.HasFile)
+                    {
+                        string nomeArquivo = uploadFoto.FileName;
+                        string caminhoArquivo = Path.Combine(MapPath("~/Imagens/Fotos"), nomeArquivo);
+                        uploadFoto.SaveAs(caminhoArquivo);
 
-                    pessoa.NomeFoto = nomeArquivo;
+                        pessoa.NomeFoto = nomeArquivo;
+                    }
 
                     new PessoaBusiness().Salvar(pessoa);
 
-                    lblMsg.Text = "Cadastro Realizado com Sucesso!";
+                    lblMsg.Text = "Operação Realizada com Sucesso!";
                 }
                 else
                 {
@@ -93,5 +125,30 @@ namespace EcommerceADO
             Page.Validate();
         }
 
+        private void CarregaCampos()
+        {
+            if (this.IdPessoa > 0)
+            {
+                PessoaBusiness business = new PessoaBusiness();
+                Pessoa pessoa = business.RetornaPessoa(this.IdPessoa);
+
+                if (pessoa != null)
+                {
+                    this.IdPessoa = pessoa.Id;
+                    this.nomeFoto = pessoa.NomeFoto;
+                    txtCPF.Text = pessoa.CPF;
+                    txtNome.Text = pessoa.Nome;
+                    txtDataNasc.Text = pessoa.DataNascimento.ToShortDateString();
+                }
+            }
+            else
+            {
+                this.IdPessoa = 0;
+                this.nomeFoto = "";
+                txtCPF.Text = string.Empty;
+                txtNome.Text = string.Empty;
+                txtDataNasc.Text = string.Empty;
+            }
+        }
     }
 }

@@ -23,3 +23,12 @@ E:\Projetos\ProjetosASPNet\EcommerceADO\DataAccess\obj\Debug\DataAccess.dll
 E:\Projetos\ProjetosASPNet\EcommerceADO\DataAccess\obj\Debug\DataAccess.pdb
 D:\ProjetosASPNet\EcommerceADO\DataAccess\bin\Debug\Common.dll
 D:\ProjetosASPNet\EcommerceADO\DataAccess\bin\Debug\Common.pdb
+C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\DataAccess\bin\Debug\Common.dll
+C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\DataAccess\bin\Debug\Model.dll
+C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\DataAccess\bin\Debug\Common.pdb
+C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\DataAccess\bin\Debug\Model.pdb
+C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\DataAccess\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\DataAccess\obj\Debug\DataAccess.pdb

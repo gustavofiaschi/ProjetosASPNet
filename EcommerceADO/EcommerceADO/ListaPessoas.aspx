@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
         CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" 
-        GridLines="None">
+        GridLines="None" DataKeyNames="Id" onrowcommand="GridView1_RowCommand">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="Nome" HeaderText="Nome" NullDisplayText="---" 
@@ -15,6 +15,8 @@
             <asp:ImageField DataImageUrlField="NomeFoto" 
                 DataImageUrlFormatString="~/Imagens/Fotos/{0}" HeaderText="Foto">
             </asp:ImageField>
+            <asp:CommandField ButtonType="Button" ShowCancelButton="False" 
+                ShowEditButton="True" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
