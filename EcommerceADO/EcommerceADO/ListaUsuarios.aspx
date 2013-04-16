@@ -4,12 +4,15 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
         DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" 
-        GridLines="None">
+        GridLines="None" DataKeyNames="Id" onrowcommand="GridView1_RowCommand">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="Login" HeaderText="Login" SortExpression="Login" />
             <asp:BoundField DataField="Status" HeaderText="Status" 
                 SortExpression="Status" />
+            <asp:CommandField ShowCancelButton="False" ShowEditButton="True" />
+            <asp:CommandField InsertVisible="False" ShowCancelButton="False" 
+                ShowDeleteButton="True" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

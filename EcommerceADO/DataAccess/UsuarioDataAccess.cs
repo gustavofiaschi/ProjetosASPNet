@@ -55,5 +55,54 @@ namespace DataAccess
 
             return listaUsuarios;
         }
+
+        public void Atualizar(Usuario usuario)
+        {
+            SqlCommand cmd = new SqlCommand("Update Usuario set Login = @Login, Status = @Status, Senha = @Senha, PessoaId = @PessoaId where Id = @Id", this.Connection);
+
+            cmd.Parameters.AddWithValue("@Login", usuario.Login);
+            cmd.Parameters.AddWithValue("@Status", (short)usuario.Status);
+            cmd.Parameters.AddWithValue("@Senha", usuario.Senha);
+            cmd.Parameters.AddWithValue("@PessoaId", usuario.PessoaId);
+            cmd.Parameters.AddWithValue("@Id", usuario.Id);
+
+            this.Connect();
+            int linhas = cmd.ExecuteNonQuery();
+            this.Disconnect();
+        }
+
+        public void Excluir(int id)
+        {
+            SqlCommand cmd = new SqlCommand("Delete Usuario Where Id = @Id", this.Connection);
+
+            cmd.Parameters.AddWithValue("@Id", id);
+
+            this.Connect();
+            int linhas = cmd.ExecuteNonQuery();
+            this.Disconnect();
+        }
+
+        public Usuario RetornaUsuario(int id)
+        {
+            SqlCommand cmd = new SqlCommand("Select * From Usuario where Id = @Id", this.Connection);
+            cmd.Parameters.AddWithValue("@Id", id);
+
+            this.Connect();
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            Usuario usuario = new Usuario();
+            while (dr.Read())
+            {                
+                usuario.Id = int.Parse(dr["Id"].ToString());
+                usuario.Login = dr["Login"].ToString();
+
+                bool status = bool.Parse(dr["Status"].ToString());
+                usuario.Status = status ? StatusUsuario.Ativado : StatusUsuario.Inativo;
+                usuario.Senha = dr["Senha"].ToString();
+                usuario.PessoaId = int.Parse(dr["PessoaId"].ToString());
+            }
+
+            return usuario;
+        }
     }
 }

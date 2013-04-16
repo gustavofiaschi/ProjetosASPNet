@@ -31,7 +31,11 @@ namespace Business
             }
 
             UsuarioDataAccess access = new UsuarioDataAccess();
-            access.Salvar(usuario);
+
+            if (usuario.Id == 0)
+                access.Salvar(usuario);
+            else if (usuario.Id > 0)
+                access.Atualizar(usuario);
         }
 
         public List<Usuario> RetornaUsuarios()
@@ -52,6 +56,21 @@ namespace Business
             }
 
             return listaStatus;
+        }
+
+        public void Excluir(int id)
+        {
+            if (id > 0)
+            {
+                new UsuarioDataAccess().Excluir(id);
+            }
+            else
+                throw new Exception("Id do Usuário invalido!");
+        }
+
+        public Usuario RetornaUsuario(int id)
+        {
+            return new UsuarioDataAccess().RetornaUsuario(id);
         }
     }
 }
