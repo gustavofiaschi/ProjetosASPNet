@@ -1,5 +1,12 @@
 ﻿/* DEFAULTS
 ----------------------------------------------------------*/
+.tdDescricao
+{
+    color:Blue;
+    background-color:White;
+    font-weight:bold;
+    font-style:italic;
+}
 
 body   
 {

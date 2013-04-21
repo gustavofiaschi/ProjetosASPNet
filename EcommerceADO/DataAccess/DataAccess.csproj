@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexao.cs" />
+    <Compile Include="ProdutoDataAccess.cs" />
     <Compile Include="UsuarioDataAccess.cs" />
     <Compile Include="PessoaDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

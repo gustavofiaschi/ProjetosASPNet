@@ -66,6 +66,7 @@
     <Content Include="cadPessoas.aspx" />
     <Content Include="cadUsuarios.aspx" />
     <Content Include="ListaPessoas.aspx" />
+    <Content Include="ListaProdutos.aspx" />
     <Content Include="ListaUsuarios.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
@@ -148,6 +149,13 @@
     <Compile Include="ListaPessoas.aspx.designer.cs">
       <DependentUpon>ListaPessoas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ListaProdutos.aspx.cs">
+      <DependentUpon>ListaProdutos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaProdutos.aspx.designer.cs">
+      <DependentUpon>ListaProdutos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ListaUsuarios.aspx.cs">
       <DependentUpon>ListaUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -167,6 +175,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Imagens\Fotos\" />
+    <Folder Include="Imagens\Produtos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
