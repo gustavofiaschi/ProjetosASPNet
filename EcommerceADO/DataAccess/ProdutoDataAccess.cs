@@ -24,7 +24,7 @@ namespace DataAccess
             cmd.Parameters.AddWithValue("@Descricao", produto.Descricao);
             cmd.Parameters.AddWithValue("@Preco", produto.Preco);
             cmd.Parameters.AddWithValue("@QtdEstoque", produto.QtdEstoque);
-            cmd.Parameters.AddWithValue("@CategoriaId", (short)produto.Categoria);
+            cmd.Parameters.AddWithValue("@Categoria", (short)produto.Categoria);
             cmd.Parameters.AddWithValue("@Foto", produto.Foto);
 
             this.Connect();
@@ -77,6 +77,31 @@ namespace DataAccess
             this.Connect();
             cmd.ExecuteNonQuery();
             this.Disconnect();
+        }
+
+        public Produto RetornaProduto(int idProduto)
+        {
+            string command = "Select * from Produto where Id = @Id";
+
+            SqlCommand cmd = new SqlCommand(command, this.Connection);
+            cmd.Parameters.AddWithValue("@Id", (short)idProduto);
+
+            this.Connect();
+            SqlDataReader dr = cmd.ExecuteReader();
+            
+            Produto produto = new Produto();
+            while (dr.Read())
+            {                
+                produto.Nome = dr["Nome"].ToString();
+                produto.Descricao = dr["Descricao"].ToString();
+                produto.Preco = Convert.ToDecimal(dr["Preco"]);
+                produto.Id = int.Parse(dr["Id"].ToString());
+                produto.Foto = dr["Foto"] == null ? string.Empty : dr["Foto"].ToString();
+                produto.QtdEstoque = int.Parse(dr["QtdEstoque"].ToString());
+                produto.Categoria = (ProdutoCategorias)Enum.Parse(typeof(ProdutoCategorias), dr["CategoriaId"].ToString());
+            }
+
+            return produto;
         }
     }
 }

@@ -1,35 +1,55 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ListaProdutos.aspx.cs" Inherits="EcommerceADO.ListaProdutos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+    CodeBehind="ListaProdutos.aspx.cs" Inherits="EcommerceADO.ListaProdutos" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
+    Categorias:
+    <asp:DropDownList ID="ddlCategorias" runat="server" AutoPostBack="true">
+    </asp:DropDownList>
+    <br />
+    <br />
+    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1" OnItemCommand="Repeater1_ItemCommand">
         <ItemTemplate>
-            <table style="width:100%;" >
+            <table style="width: 50%; text-align: center; vertical-align: middle;">
                 <tr>
-                    <td>
-                      Nome:
+                    <td colspan="3">
+                        <asp:Image ID="Image1" runat="server" ImageUrl='<%#Eval("Foto", "Imagens/Produtos/{0}") %>'
+                            Width="80" Height="80" />
                     </td>
                     <td>
-                    <%#Eval("Nome") %>
+                        <b><strong style="font-size: 26;">
+                            <%#Eval("Nome") %></strong></b>
+                        <br />
+                        <br />
+                        <i>
+                            <%#Eval("Descricao") %></i>
+                        <br />
+                        <br />
+                        <%#Eval("Preco","{0:c}") %>
                     </td>
-                    <td>
-                      Descrição:
-                    </td>
-                    <td>
-                    <%#Eval("Descricao") %>
+                    <td style="text-align: right;">
+                        <asp:Button runat="server" ID="btnEditar" Text="Editar" CommandName="Edit" CommandArgument='<%#Eval("Id") %>' />
+                        <br />
+                        <asp:Button runat="server" ID="btnComprar" Text="Comprar" CommandName="Comprar" CommandArgument='<%#Eval("Id") %>' />
+                        <br />
+                        <asp:Button runat="server" ID="btnAddCarrinho" Text="Add ao Carrinho" CommandName="AddCarrinho"
+                            CommandArgument='<%#Eval("Id") %>' />
                     </td>
                 </tr>
             </table>
         </ItemTemplate>
         <SeparatorTemplate>
-            <hr style="width:100%;" />
+            <tr style="border: medium dotted #000000; width: 100%; background-color: Black; height: 2%">
+                <br />
+            </tr>
         </SeparatorTemplate>
     </asp:Repeater>
-    
-    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
-        SelectMethod="RetornaProdutos" TypeName="Business.ProdutoBusiness">
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="RetornaProdutos"
+        TypeName="Business.ProdutoBusiness">
         <SelectParameters>
-            <asp:Parameter Name="categoria" Type="Object" />
+            <asp:ControlParameter ControlID="ddlCategorias" Name="categoria" PropertyName="SelectedValue"
+                Type="Object" />
         </SelectParameters>
     </asp:ObjectDataSource>
 </asp:Content>

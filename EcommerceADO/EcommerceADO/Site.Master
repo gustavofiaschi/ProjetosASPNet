@@ -35,6 +35,10 @@
                             <asp:MenuItem NavigateUrl="~/cadUsuarios.aspx" Text="Cadastro de Usuario" />
                             <asp:MenuItem NavigateUrl="~/ListaUsuarios.aspx" Text="Lista de Usuarios" />
                         </asp:MenuItem>
+                        <asp:MenuItem Text="Produtos">
+                            <asp:MenuItem NavigateUrl="~/cadProdutos.aspx" Text="Cadastro de Produtos" />
+                            <asp:MenuItem NavigateUrl="~/ListaProdutos.aspx" Text="Lista de Produtos" />
+                        </asp:MenuItem>
                     </Items>
                 </asp:Menu>
             </div>
