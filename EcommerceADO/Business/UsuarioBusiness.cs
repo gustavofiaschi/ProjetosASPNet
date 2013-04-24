@@ -72,5 +72,20 @@ namespace Business
         {
             return new UsuarioDataAccess().RetornaUsuario(id);
         }
+
+        public Usuario RealizarLogin(string usuario, string senha)
+        {
+            if (string.IsNullOrWhiteSpace(usuario))
+            {
+                throw new Exception("Usuário inválido");
+            }
+
+            if (string.IsNullOrWhiteSpace(senha))
+            {
+                throw new Exception("Senha inválida");
+            }
+
+            return new UsuarioDataAccess().RealizarLogin(usuario, senha);
+        }
     }
 }

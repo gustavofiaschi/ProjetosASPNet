@@ -17,7 +17,7 @@ namespace DataAccess
 
         public Conexao()
         {
-            this.connection = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=EcommerceADO;Integrated Security=True");            
+            this.connection = new SqlConnection(@"Data Source=.\sqlexpress2;Initial Catalog=Ecommerce2;Integrated Security=True");            
         }
 
         public void Connect()

@@ -56,6 +56,30 @@ namespace DataAccess
             return listaUsuarios;
         }
 
+        public Usuario RealizarLogin(string usuario, string senha)
+        {
+            SqlCommand cmd = new SqlCommand("Select * From Usuario where Status = 1 AND (Login = @Login AND Senha = @Senha) ", this.Connection);
+            cmd.Parameters.AddWithValue("@Login", usuario);
+            cmd.Parameters.AddWithValue("@Senha", senha);
+
+            this.Connect();
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            Usuario usuarioLogado = null;
+            while (dr.Read())
+            {
+                usuarioLogado = new Usuario();
+                usuarioLogado.Id = int.Parse(dr["Id"].ToString());
+                usuarioLogado.Login = dr["Login"].ToString();
+                bool status = bool.Parse(dr["Status"].ToString());
+                usuarioLogado.Status = status ? StatusUsuario.Ativado : StatusUsuario.Inativo;
+                usuarioLogado.Senha = dr["Senha"].ToString();
+                usuarioLogado.PessoaId = int.Parse(dr["PessoaId"].ToString());
+            }
+
+            return usuarioLogado;
+        }
+
         public void Atualizar(Usuario usuario)
         {
             SqlCommand cmd = new SqlCommand("Update Usuario set Login = @Login, Status = @Status, Senha = @Senha, PessoaId = @PessoaId where Id = @Id", this.Connection);

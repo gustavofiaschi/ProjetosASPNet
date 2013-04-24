@@ -70,12 +70,15 @@
     <Content Include="ListaPessoas.aspx" />
     <Content Include="ListaProdutos.aspx" />
     <Content Include="ListaUsuarios.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="ucCarrinhoCompras.ascx" />
+    <Content Include="ucLogin.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -172,6 +175,13 @@
     <Compile Include="ListaUsuarios.aspx.designer.cs">
       <DependentUpon>ListaUsuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -179,6 +189,20 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ucCarrinhoCompras.ascx.cs">
+      <DependentUpon>ucCarrinhoCompras.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucCarrinhoCompras.ascx.designer.cs">
+      <DependentUpon>ucCarrinhoCompras.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucLogin.ascx.cs">
+      <DependentUpon>ucLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucLogin.ascx.designer.cs">
+      <DependentUpon>ucLogin.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

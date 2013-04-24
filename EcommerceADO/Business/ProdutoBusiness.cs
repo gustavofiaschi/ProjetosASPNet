@@ -12,6 +12,7 @@ namespace Business
     {
         public List<Produto> RetornaProdutos(ProdutoCategorias categoria = ProdutoCategorias.Todos)
         {
+
             return new ProdutoDataAccess().RetornaProdutos(categoria);
         }
 

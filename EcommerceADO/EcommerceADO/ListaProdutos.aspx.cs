@@ -14,6 +14,9 @@ namespace EcommerceADO
         {
             if (!IsPostBack)
             {
+                ucLogin uc = (ucLogin)this.Master.FindControl("ucLogin1");
+                uc.UsuarioLogado.Login = "TESTE";
+
                 ProdutoBusiness business = new ProdutoBusiness();
                 ddlCategorias.DataSource = business.RetornaCategorias();
                 ddlCategorias.DataTextField = "Value";
@@ -24,6 +27,8 @@ namespace EcommerceADO
 
         protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
+            int id = int.Parse(e.CommandArgument.ToString()); 
+
             switch (e.CommandName.ToString())
             {
                 case "Comprar":
@@ -32,8 +37,7 @@ namespace EcommerceADO
                 case "AddCarrinho":
                     //TODO: Adicionar ao Carrinho de Compras
                     break;
-                case "Edit":
-                    int id = int.Parse(e.CommandArgument.ToString());                    
+                case "Edit":                                       
                     string url = string.Format("cadProdutos.aspx?id={0}", id);
                     Response.Redirect(url);
                     break;

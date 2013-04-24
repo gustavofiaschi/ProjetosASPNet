@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="EcommerceDatabase.edmx.sql" />
+    <Content Include="ScriptAtualizadoDB.sql" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
