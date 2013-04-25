@@ -40,6 +40,15 @@ namespace EcommerceADO {
         protected global::EcommerceADO.ucLogin ucLogin1;
         
         /// <summary>
+        /// ucCarrinhoCompras1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::EcommerceADO.ucCarrinhoCompras ucCarrinhoCompras1;
+        
+        /// <summary>
         /// NavigationMenu control.
         /// </summary>
         /// <remarks>

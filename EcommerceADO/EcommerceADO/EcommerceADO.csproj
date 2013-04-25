@@ -67,6 +67,8 @@
     <Content Include="cadPessoas.aspx" />
     <Content Include="cadProdutos.aspx" />
     <Content Include="cadUsuarios.aspx" />
+    <Content Include="Imagens\CarEmpty.jpg" />
+    <Content Include="Imagens\CarFull.jpg" />
     <Content Include="ListaPessoas.aspx" />
     <Content Include="ListaProdutos.aspx" />
     <Content Include="ListaUsuarios.aspx" />
@@ -248,7 +250,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1811</DevelopmentServerPort>
+          <DevelopmentServerPort>2735</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

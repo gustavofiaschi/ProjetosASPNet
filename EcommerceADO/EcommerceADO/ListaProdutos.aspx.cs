@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Business;
+using Model;
 
 namespace EcommerceADO
 {
@@ -27,15 +28,24 @@ namespace EcommerceADO
 
         protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
+            ucCarrinhoCompras carrinho = (ucCarrinhoCompras)this.Master.FindControl("ucCarrinhoCompras1");
+
             int id = int.Parse(e.CommandArgument.ToString()); 
 
             switch (e.CommandName.ToString())
             {
                 case "Comprar":
-                    //TODO: Adicionar ao carrinho de comprar e redirecionar a pagina de Finalizar Compra
+                    //Adicionar ao carrinho de comprar e redirecionar a pagina de Finalizar Compra
+                    Produto produtoCompra = new ProdutoBusiness().RetornaProduto(id);
+                    carrinho.AddProduto(produtoCompra);
+                    carrinho.AtualizaCarrinho();
+                    Response.Redirect("FinalizarPedido.aspx");
                     break;
                 case "AddCarrinho":
-                    //TODO: Adicionar ao Carrinho de Compras
+                    // Adicionar ao Carrinho de Compras
+                    Produto produtoCarrinho = new ProdutoBusiness().RetornaProduto(id);
+                    carrinho.AddProduto(produtoCarrinho);
+                    carrinho.AtualizaCarrinho();
                     break;
                 case "Edit":                                       
                     string url = string.Format("cadProdutos.aspx?id={0}", id);

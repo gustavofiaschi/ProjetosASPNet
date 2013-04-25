@@ -1,7 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="EcommerceADO.SiteMaster" %>
 
-<%@ Register src="ucLogin.ascx" tagname="ucLogin" tagprefix="uc1" %>
-
+<%@ Register Src="ucLogin.ascx" TagName="ucLogin" TagPrefix="uc1" %>
+<%@ Register Src="ucCarrinhoCompras.ascx" TagName="ucCarrinhoCompras" TagPrefix="uc2" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
@@ -20,12 +20,13 @@
                 </h1>
             </div>
             <div class="loginDisplay">
-                <asp:DropDownList ID="ddlTema" runat="server" AutoPostBack="True" 
-                    DataTextField="Nome" DataValueField="Id" 
-                    onselectedindexchanged="ddlTema_SelectedIndexChanged">
+                <asp:DropDownList ID="ddlTema" runat="server" AutoPostBack="True" DataTextField="Nome"
+                    DataValueField="Id" OnSelectedIndexChanged="ddlTema_SelectedIndexChanged">
                 </asp:DropDownList>
-            &nbsp;
-                <uc1:ucLogin ID="ucLogin1" runat="server" />
+                <br />
+                <uc1:ucLogin ID="ucLogin1" runat="server" />                
+                <br />
+                <uc2:ucCarrinhoCompras ID="ucCarrinhoCompras1" runat="server" />
             </div>
             <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
