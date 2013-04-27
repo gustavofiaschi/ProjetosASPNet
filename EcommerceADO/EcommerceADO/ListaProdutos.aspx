@@ -19,7 +19,8 @@
                     </td>
                     <td>
                         <b><strong style="font-size: 26;">
-                            <%#Eval("Nome") %></strong></b>
+                            <asp:Label ID="lblNome" runat="server" Text=<%#Eval("Nome") %>></asp:Label>
+                            </strong></b>
                         <br />
                         <br />
                         <i>
@@ -52,4 +53,4 @@
                 Type="Object" />
         </SelectParameters>
     </asp:ObjectDataSource>
-</asp:Content>
+    </asp:Content>

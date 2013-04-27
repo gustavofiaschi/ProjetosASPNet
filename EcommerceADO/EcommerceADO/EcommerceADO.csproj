@@ -67,6 +67,8 @@
     <Content Include="cadPessoas.aspx" />
     <Content Include="cadProdutos.aspx" />
     <Content Include="cadUsuarios.aspx" />
+    <Content Include="FinalizarPedido.aspx" />
+    <Content Include="Imagens\ajaxloader.gif" />
     <Content Include="Imagens\CarEmpty.jpg" />
     <Content Include="Imagens\CarFull.jpg" />
     <Content Include="ListaPessoas.aspx" />
@@ -152,6 +154,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FinalizarPedido.aspx.cs">
+      <DependentUpon>FinalizarPedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinalizarPedido.aspx.designer.cs">
+      <DependentUpon>FinalizarPedido.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

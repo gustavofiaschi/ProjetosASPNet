@@ -15,9 +15,6 @@ namespace EcommerceADO
         {
             if (!IsPostBack)
             {
-                ucLogin uc = (ucLogin)this.Master.FindControl("ucLogin1");
-                uc.UsuarioLogado.Login = "TESTE";
-
                 ProdutoBusiness business = new ProdutoBusiness();
                 ddlCategorias.DataSource = business.RetornaCategorias();
                 ddlCategorias.DataTextField = "Value";
