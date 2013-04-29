@@ -19,4 +19,3 @@ C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\Common\bin\Debug\C
 C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\Common\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\Common\obj\Debug\Common.dll
 C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\Common\obj\Debug\Common.pdb
-E:\Projetos\ProjetosASPNet\EcommerceADO\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

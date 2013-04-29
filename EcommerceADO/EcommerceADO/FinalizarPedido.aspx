@@ -31,9 +31,14 @@
                     <td style="text-align: right;">
                         <asp:TextBox ID="txtQuantidade" Text='<%#Eval("Quantidade")%>' runat="server">                   
                         </asp:TextBox>
-                        <asp:MaskedEditExtender ID="txtPreco_MaskedEditExtender" runat="server" Mask="99"
+                        &nbsp;&nbsp;&nbsp;
+                        <asp:NumericUpDownExtender ID="NumericUpDownExtender1" runat="server" 
+                        Maximum="99" Minimum="1" Width="60" 
+                        TargetControlID="txtQuantidade">
+                        </asp:NumericUpDownExtender>
+                        <%--<asp:MaskedEditExtender ID="txtPreco_MaskedEditExtender" runat="server" Mask="99"
                             MaskType="Number" TargetControlID="txtQuantidade">
-                        </asp:MaskedEditExtender>
+                        </asp:MaskedEditExtender>--%>
                     </td>
                 </tr>
             </table>
