@@ -51,6 +51,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ALTER TABLE PEDIDOPRODUTO E PEDIDO.sql" />
     <Content Include="EcommerceDatabase.edmx.sql" />
     <Content Include="ScriptAtualizadoDB.sql" />
   </ItemGroup>

@@ -30,6 +30,7 @@
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Data" Type="datetime" Nullable="false" />
     <Property Name="PessoaId" Type="int" Nullable="false" />
+    <Property Name="PrecoTotal" Type="decimal" Scale="2" />
   </EntityType>
   <EntityType Name="PedidoProduto">
     <Key>
@@ -38,6 +39,7 @@
     </Key>
     <Property Name="Pedidos_Id" Type="int" Nullable="false" />
     <Property Name="Produtos_Id" Type="int" Nullable="false" />
+    <Property Name="Quantidade" Type="int" />
   </EntityType>
   <EntityType Name="Pessoa">
     <Key>
@@ -58,8 +60,8 @@
     <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Preco" Type="decimal" Nullable="false" Precision="10" Scale="2" />
     <Property Name="QtdEstoque" Type="int" Nullable="false" />
-    <Property Name="CategoriaId" Type="int" />
     <Property Name="Foto" Type="varchar(max)" />
+    <Property Name="CategoriaId" Type="int" />
   </EntityType>
   <EntityType Name="Usuario">
     <Key>

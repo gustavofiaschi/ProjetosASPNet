@@ -27,6 +27,7 @@
     <Property Name="PessoaId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Pessoa" Relationship="EcommerceModel.FK_PessoaPedido" FromRole="Pedido" ToRole="Pessoa" />
     <NavigationProperty Name="Produto" Relationship="EcommerceModel.PedidoProduto" FromRole="Pedido" ToRole="Produto" />
+    <Property Type="Decimal" Name="PrecoTotal" Precision="18" Scale="2" />
   </EntityType>
   <EntityType Name="EPessoa">
     <Key>

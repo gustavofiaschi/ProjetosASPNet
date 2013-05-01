@@ -42,3 +42,5 @@ C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\Business\obj\Debug
 C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\Business\obj\Debug\Business.pdb
 C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\Business\bin\Debug\EntityDataAccess.dll
 C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\Business\bin\Debug\EntityDataAccess.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\Business\bin\Debug\EntityDataAccess.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\Business\bin\Debug\EntityDataAccess.pdb

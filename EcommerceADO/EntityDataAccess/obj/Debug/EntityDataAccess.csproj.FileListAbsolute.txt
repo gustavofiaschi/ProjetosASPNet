@@ -4,3 +4,8 @@ C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\EntityDataAccess\b
 C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\EntityDataAccess\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\EntityDataAccess\obj\Debug\EntityDataAccess.dll
 C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\EntityDataAccess\obj\Debug\EntityDataAccess.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\EntityDataAccess\bin\Debug\EntityDataAccess.dll.config
+E:\Projetos\ProjetosASPNet\EcommerceADO\EntityDataAccess\bin\Debug\EntityDataAccess.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\EntityDataAccess\bin\Debug\EntityDataAccess.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\EntityDataAccess\obj\Debug\EntityDataAccess.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\EntityDataAccess\obj\Debug\EntityDataAccess.pdb

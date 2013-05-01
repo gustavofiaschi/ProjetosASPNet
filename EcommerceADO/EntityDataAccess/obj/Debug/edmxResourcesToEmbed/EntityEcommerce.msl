@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Pedido">
       <EntityTypeMapping TypeName="EcommerceModel.EPedido">
         <MappingFragment StoreEntitySet="Pedido">
+          <ScalarProperty Name="PrecoTotal" ColumnName="PrecoTotal" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Data" ColumnName="Data" />
           <ScalarProperty Name="PessoaId" ColumnName="PessoaId" />

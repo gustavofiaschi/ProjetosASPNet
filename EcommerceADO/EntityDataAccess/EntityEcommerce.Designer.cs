@@ -8,12 +8,13 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
@@ -137,6 +138,7 @@ namespace EntityDataAccess
         private ObjectSet<EUsuario> _Usuario;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -172,11 +174,11 @@ namespace EntityDataAccess
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -205,6 +207,7 @@ namespace EntityDataAccess
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -281,8 +284,33 @@ namespace EntityDataAccess
         private global::System.Int32 _PessoaId;
         partial void OnPessoaIdChanging(global::System.Int32 value);
         partial void OnPessoaIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> PrecoTotal
+        {
+            get
+            {
+                return _PrecoTotal;
+            }
+            set
+            {
+                OnPrecoTotalChanging(value);
+                ReportPropertyChanging("PrecoTotal");
+                _PrecoTotal = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PrecoTotal");
+                OnPrecoTotalChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _PrecoTotal;
+        partial void OnPrecoTotalChanging(Nullable<global::System.Decimal> value);
+        partial void OnPrecoTotalChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -347,6 +375,7 @@ namespace EntityDataAccess
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -375,6 +404,7 @@ namespace EntityDataAccess
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -501,6 +531,7 @@ namespace EntityDataAccess
         partial void OnNomeFotoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -549,6 +580,7 @@ namespace EntityDataAccess
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -581,6 +613,7 @@ namespace EntityDataAccess
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -755,6 +788,7 @@ namespace EntityDataAccess
         partial void OnFotoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -781,6 +815,7 @@ namespace EntityDataAccess
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -813,6 +848,7 @@ namespace EntityDataAccess
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -939,6 +975,7 @@ namespace EntityDataAccess
         partial void OnPessoaIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -981,8 +1018,10 @@ namespace EntityDataAccess
         }
 
         #endregion
+
     }
 
     #endregion
+
     
 }
