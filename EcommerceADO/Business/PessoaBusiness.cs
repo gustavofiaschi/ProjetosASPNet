@@ -28,14 +28,14 @@ namespace Business
             PessoaDataAccess access = new PessoaDataAccess();
             //Verificação do id para Salvar/Atualizar
             if (pessoa.Id == 0)
-                access.Salvar(pessoa);
+                access.SalvarEntity(pessoa);
             else if (pessoa.Id > 0)
-                access.Atualizar(pessoa);
+                access.AtualizarEntity(pessoa);
         }
 
         public List<Pessoa> RetornaPessoas()
         {
-            return new PessoaDataAccess().RetornaPessoas();
+            return new PessoaDataAccess().RetornaPessoasEntity();
         }
 
         public Pessoa RetornaPessoa(int idPessoa)
@@ -43,7 +43,7 @@ namespace Business
             if (idPessoa > 0)
             {
                 PessoaDataAccess access = new PessoaDataAccess();
-                return access.RetornaPessoa(idPessoa);
+                return access.RetornaPessoaEntity(idPessoa);
             }
             else
             {

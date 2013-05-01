@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EcommerceModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="EcommerceModelStoreContainer">
+    <EntitySet Name="Pedido" EntityType="EcommerceModel.Store.Pedido" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PedidoProduto" EntityType="EcommerceModel.Store.PedidoProduto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pessoa" EntityType="EcommerceModel.Store.Pessoa" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Produto" EntityType="EcommerceModel.Store.Produto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="EcommerceModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_PedidoProduto_Pedido" Association="EcommerceModel.Store.FK_PedidoProduto_Pedido">
+      <End Role="Pedido" EntitySet="Pedido" />
+      <End Role="PedidoProduto" EntitySet="PedidoProduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PedidoProduto_Produto" Association="EcommerceModel.Store.FK_PedidoProduto_Produto">
+      <End Role="Produto" EntitySet="Produto" />
+      <End Role="PedidoProduto" EntitySet="PedidoProduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaPedido" Association="EcommerceModel.Store.FK_PessoaPedido">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaUsuario" Association="EcommerceModel.Store.FK_PessoaUsuario">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Pedido">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="PessoaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PedidoProduto">
+    <Key>
+      <PropertyRef Name="Pedidos_Id" />
+      <PropertyRef Name="Produtos_Id" />
+    </Key>
+    <Property Name="Pedidos_Id" Type="int" Nullable="false" />
+    <Property Name="Produtos_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pessoa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DataNascimento" Type="datetime" />
+    <Property Name="CPF" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NomeFoto" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Produto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Preco" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="QtdEstoque" Type="int" Nullable="false" />
+    <Property Name="CategoriaId" Type="int" />
+    <Property Name="Foto" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PessoaId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_PedidoProduto_Pedido">
+    <End Role="Pedido" Type="EcommerceModel.Store.Pedido" Multiplicity="1" />
+    <End Role="PedidoProduto" Type="EcommerceModel.Store.PedidoProduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pedido">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PedidoProduto">
+        <PropertyRef Name="Pedidos_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PedidoProduto_Produto">
+    <End Role="Produto" Type="EcommerceModel.Store.Produto" Multiplicity="1" />
+    <End Role="PedidoProduto" Type="EcommerceModel.Store.PedidoProduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PedidoProduto">
+        <PropertyRef Name="Produtos_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaPedido">
+    <End Role="Pessoa" Type="EcommerceModel.Store.Pessoa" Multiplicity="1" />
+    <End Role="Pedido" Type="EcommerceModel.Store.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaUsuario">
+    <End Role="Pessoa" Type="EcommerceModel.Store.Pessoa" Multiplicity="1" />
+    <End Role="Usuario" Type="EcommerceModel.Store.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

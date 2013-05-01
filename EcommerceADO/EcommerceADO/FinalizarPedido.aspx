@@ -62,6 +62,7 @@
     <br />
     <asp:Button ID="btn" runat="server" Text="Recalcular" OnClick="btn_Click" />
     <asp:Button ID="btnFinalizarCompra" runat="server" Text="Finalizar Compra" OnClick="btnFinalizarCompra_Click" />
+    
     <asp:ModalPopupExtender ID="modalFinalizarPedido" runat="server" TargetControlID="btnFinalizarCompra" PopupControlID="MsgBox" CancelControlID="btnNao">
     </asp:ModalPopupExtender>
     <div id="MsgBox" style="background-color:Gray; text-align: center; color:White; width: 20%; display: none;">

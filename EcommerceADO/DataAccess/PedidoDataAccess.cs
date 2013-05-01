@@ -20,8 +20,7 @@ namespace DataAccess
                 SqlCommand cmdInserirPedido = new SqlCommand("Insert into Pedido(Data, PessoaId) values (getdate(), @PessoaId);Select cast(scope_identity() as int)", this.Connection, transacao);
                 cmdInserirPedido.Parameters.AddWithValue("@PessoaId", pessoaId);
                 idPedido = (int)cmdInserirPedido.ExecuteScalar();
-
-                throw new Exception("Boa");
+                                
                 //Chama camada PedidoProduto
                 foreach (var produto in listaProdutos)
                 {

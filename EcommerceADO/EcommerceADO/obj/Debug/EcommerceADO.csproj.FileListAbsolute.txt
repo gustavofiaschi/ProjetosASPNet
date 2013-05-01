@@ -84,3 +84,5 @@ C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\r
 C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\tr-TR\AjaxControlToolkit.resources.dll
 C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\zh-CHS\AjaxControlToolkit.resources.dll
 C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\zh-CHT\AjaxControlToolkit.resources.dll
+C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\EntityDataAccess.dll
+C:\Users\Gustavo\Documents\GitHub\ProjetosASPNet\EcommerceADO\EcommerceADO\bin\EntityDataAccess.pdb

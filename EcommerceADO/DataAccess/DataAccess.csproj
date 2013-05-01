@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexao.cs" />
+    <Compile Include="ConvertDataModel.cs" />
     <Compile Include="PedidoDataAccess.cs" />
     <Compile Include="PedidoProdutoDataAccess.cs" />
     <Compile Include="ProdutoDataAccess.cs" />
@@ -56,6 +58,10 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{5AD4F2B3-1A76-480E-B4B4-DA66A0FB17D9}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntityDataAccess\EntityDataAccess.csproj">
+      <Project>{EDF186AE-D8F3-45B7-B783-52E287B6B5E8}</Project>
+      <Name>EntityDataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{ADC02234-5F49-44E5-8534-9CBE1572D21C}</Project>

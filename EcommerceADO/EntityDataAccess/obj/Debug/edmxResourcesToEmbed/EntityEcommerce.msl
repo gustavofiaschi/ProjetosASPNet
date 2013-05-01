@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EcommerceModelStoreContainer" CdmEntityContainer="Ecommerce2Entities">
+    <EntitySetMapping Name="Pedido">
+      <EntityTypeMapping TypeName="EcommerceModel.EPedido">
+        <MappingFragment StoreEntitySet="Pedido">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="PessoaId" ColumnName="PessoaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pessoa">
+      <EntityTypeMapping TypeName="EcommerceModel.EPessoa">
+        <MappingFragment StoreEntitySet="Pessoa">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+          <ScalarProperty Name="NomeFoto" ColumnName="NomeFoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Produto">
+      <EntityTypeMapping TypeName="EcommerceModel.EProduto">
+        <MappingFragment StoreEntitySet="Produto">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Preco" ColumnName="Preco" />
+          <ScalarProperty Name="QtdEstoque" ColumnName="QtdEstoque" />
+          <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="EcommerceModel.EUsuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="PessoaId" ColumnName="PessoaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="PedidoProduto" TypeName="EcommerceModel.PedidoProduto" StoreEntitySet="PedidoProduto">
+      <EndProperty Name="Pedido">
+        <ScalarProperty Name="Id" ColumnName="Pedidos_Id" />
+      </EndProperty>
+      <EndProperty Name="Produto">
+        <ScalarProperty Name="Id" ColumnName="Produtos_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

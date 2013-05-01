@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Model;
 using System.Data.SqlClient;
+using EntityDataAccess;
 
 namespace DataAccess
 {
@@ -26,6 +27,13 @@ namespace DataAccess
             this.Connect();
             int linhas = cmd.ExecuteNonQuery();
             this.Disconnect();
+        }
+
+        public void SalvarEntity(Pessoa pessoa)
+        {
+            EPessoa pessoaEntity = ConvertDataModel.PessoaToEPessoa(pessoa);            
+            this.EntityContext.Pessoa.AddObject(pessoaEntity);
+            this.EntityContext.SaveChanges();            
         }
         
         public List<Pessoa> RetornaPessoas()
@@ -52,6 +60,16 @@ namespace DataAccess
             return listaPessoas;
         }
 
+        public List<Pessoa> RetornaPessoasEntity()
+        {
+            List<Pessoa> listaPessoas = new List<Pessoa>();
+            
+            foreach (var item in this.EntityContext.Pessoa)
+                listaPessoas.Add(ConvertDataModel.EPessoaToPessoa(item));            
+
+            return listaPessoas;
+        }
+
         public Pessoa RetornaPessoa(int idPessoa)
         {
             SqlCommand cmd = new SqlCommand("Select * From Pessoa where Id = @id", this.Connection);
@@ -74,6 +92,19 @@ namespace DataAccess
             return pessoa;
         }
 
+        public Pessoa RetornaPessoaEntity(int idPessoa)
+        {
+            //LAMBDA EXPRESSION
+            return ConvertDataModel.EPessoaToPessoa(this.EntityContext.Pessoa.Where(p => p.Id == idPessoa).FirstOrDefault());
+
+            //LINQ
+            //var resultado = from pessoa in this.EntityContext.Pessoa
+            //                where pessoa.Id == idPessoa
+            //                select ConvertDataModel.EPessoaToPessoa(pessoa);
+
+            //return resultado.FirstOrDefault();
+        }
+        
         public void Atualizar(Pessoa pessoa)
         {
             SqlCommand cmd = new SqlCommand("Update Pessoa set Nome = @Nome, CPF = @CPF, DataNascimento = @DataNasc, NomeFoto = @NomeFoto where Id = @Id", this.Connection);
@@ -86,6 +117,13 @@ namespace DataAccess
             this.Connect();
             cmd.ExecuteNonQuery();
             this.Disconnect();
+        }
+
+        public void AtualizarEntity(Pessoa pessoa)
+        {
+            EPessoa pessoaEntity = this.EntityContext.Pessoa.Where(p => p.Id == pessoa.Id).FirstOrDefault();
+            pessoaEntity = ConvertDataModel.PessoaToEPessoa(pessoa, pessoaEntity);
+            this.EntityContext.SaveChanges();
         }
     }
 }
