@@ -30,16 +30,14 @@ namespace EcommerceADO
             base.OnPreInit(e);
 
             SiteMaster master = (SiteMaster)this.Master;
-            master.ChangedTheme += new SiteMaster.OnChangedTheme(master_ChangedTheme);
-            //master.ChangedTheme += teste;
-            //master.ChangedTheme += teste2;
+
+            //Utilização de Lambda para criação de métodos anônimos
+            master.ChangedTheme += (IdTema) =>
+                {
+                    Server.Transfer(Request.FilePath);
+                };
 
             this.Theme = master.TemaSelecionado;
-        }
-
-        void master_ChangedTheme(string IdTema)
-        {
-            Server.Transfer(Request.FilePath);
         }
 
         void teste(string x)

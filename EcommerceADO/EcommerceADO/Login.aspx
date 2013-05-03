@@ -7,10 +7,9 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-    
-        <asp:Panel ID="Panel1" runat="server">
+    <form id="form1" runat="server" >
+    <div>    
+        <asp:Panel ID="Panel1" runat="server" BackColor="Gray" Width="60%">        
             <asp:Label ID="Label1" runat="server" Text="Login:"></asp:Label>
             &nbsp;<asp:TextBox ID="txtLogin" runat="server"></asp:TextBox>
             &nbsp;
@@ -18,7 +17,7 @@
             &nbsp;<asp:TextBox ID="txtSenha" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="btnLogar" runat="server" onclick="btnLogar_Click" 
+            <asp:Button ID="btnLogar" runat="server" onclick="btnLogar_Click" Width="150"
                 Text="Logar" />
             <br />
             <asp:Label ID="lblMsg" runat="server" ForeColor="Red"></asp:Label>

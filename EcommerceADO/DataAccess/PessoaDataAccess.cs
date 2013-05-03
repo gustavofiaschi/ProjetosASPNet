@@ -31,7 +31,7 @@ namespace DataAccess
 
         public void SalvarEntity(Pessoa pessoa)
         {
-            EPessoa pessoaEntity = ConvertDataModel.PessoaToEPessoa(pessoa);            
+            EPessoa pessoaEntity = pessoa.ToEPessoa();         
             this.EntityContext.Pessoa.AddObject(pessoaEntity);
             this.EntityContext.SaveChanges();            
         }
@@ -65,7 +65,7 @@ namespace DataAccess
             List<Pessoa> listaPessoas = new List<Pessoa>();
             
             foreach (var item in this.EntityContext.Pessoa)
-                listaPessoas.Add(ConvertDataModel.EPessoaToPessoa(item));            
+                listaPessoas.Add(item.ToPessoa());            
 
             return listaPessoas;
         }
@@ -95,7 +95,7 @@ namespace DataAccess
         public Pessoa RetornaPessoaEntity(int idPessoa)
         {
             //LAMBDA EXPRESSION
-            return ConvertDataModel.EPessoaToPessoa(this.EntityContext.Pessoa.Where(p => p.Id == idPessoa).FirstOrDefault());
+            return this.EntityContext.Pessoa.Where(p => p.Id == idPessoa).FirstOrDefault().ToPessoa();
 
             //LINQ
             //var resultado = from pessoa in this.EntityContext.Pessoa
@@ -122,7 +122,7 @@ namespace DataAccess
         public void AtualizarEntity(Pessoa pessoa)
         {
             EPessoa pessoaEntity = this.EntityContext.Pessoa.Where(p => p.Id == pessoa.Id).FirstOrDefault();
-            pessoaEntity = ConvertDataModel.PessoaToEPessoa(pessoa, pessoaEntity);
+            pessoaEntity = pessoa.ToEPessoa(pessoaEntity);
             this.EntityContext.SaveChanges();
         }
     }

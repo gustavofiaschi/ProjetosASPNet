@@ -9,7 +9,8 @@ namespace DataAccess
 {
     public static class ConvertDataModel
     {
-        public static EPessoa PessoaToEPessoa(Pessoa pessoa, EPessoa Epessoa = null)
+        //Criação de Extension Methods para conversão de dados
+        public static EPessoa ToEPessoa(this Pessoa pessoa, EPessoa Epessoa = null)
         {
             if (Epessoa == null)
                 Epessoa = new EPessoa();
@@ -26,7 +27,8 @@ namespace DataAccess
             return Epessoa;
         }
 
-        public static Pessoa EPessoaToPessoa(EPessoa Epessoa)
+        //Criação de Extension Methods para conversão de dados
+        public static Pessoa ToPessoa(this EPessoa Epessoa)
         {
             Pessoa pessoa = new Pessoa();
 
