@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="89731d19-d772-4e83-b0e4-b2cd36ebe232" name="Gustavo@GUSTAVO-PC 2013-05-06 22:15:21" runUser="Gustavo-PC\Gustavo" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="659d0c57-7835-4cc7-a3e5-02c55293b527">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Gustavo_GUSTAVO-PC 2013-05-06 22_15_21">
+      <DeploymentItem filename="E:\Projetos\ProjetosASPNet\EcommerceADO\DataAccess\bin\Debug\DataAccess.dll" />
+      <DeploymentItem filename="E:\Projetos\ProjetosASPNet\EcommerceADO\Model\bin\Debug\Model.dll" />
+      <DeploymentItem filename="E:\Projetos\ProjetosASPNet\EcommerceADO\Common\bin\Debug\Common.dll" />
+      <DeploymentItem filename="E:\Projetos\ProjetosASPNet\EcommerceADO\EntityDataAccess\bin\Debug\EntityDataAccess.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-05-06T22:15:21.8027343-03:00" queuing="2013-05-06T22:15:23.1044921-03:00" start="2013-05-06T22:15:23.2431640-03:00" finish="2013-05-06T22:15:49.2656250-03:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="GUSTAVO-PC" outcome="Error" timestamp="2013-05-06T22:15:49.2636718-03:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="RetornaProdutosQuantidadesTest" storage="e:\projetos\projetosaspnet\ecommerceado\pessoa\bin\debug\pessoa.dll" id="a996afb6-2251-a462-6a57-5da21abf9569">
+      <Execution id="0c729f7c-b081-4d48-b4d1-1f24d49595ac" />
+      <TestMethod codeBase="E:/Projetos/ProjetosASPNet/EcommerceADO/Pessoa/bin/Debug/Pessoa.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Pessoa.ProdutoDataAccessTest, Pessoa, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="RetornaProdutosQuantidadesTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="a996afb6-2251-a462-6a57-5da21abf9569" executionId="0c729f7c-b081-4d48-b4d1-1f24d49595ac" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="0c729f7c-b081-4d48-b4d1-1f24d49595ac" testId="a996afb6-2251-a462-6a57-5da21abf9569" testName="RetornaProdutosQuantidadesTest" computerName="GUSTAVO-PC" duration="00:00:25.8544922" startTime="2013-05-06T22:15:23.4111328-03:00" endTime="2013-05-06T22:15:49.2656250-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0c729f7c-b081-4d48-b4d1-1f24d49595ac">
+    </UnitTestResult>
+  </Results>
+</TestRun>

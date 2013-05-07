@@ -1,0 +1,13 @@
+E:\Projetos\ProjetosASPNet\EcommerceADO\Pessoa\bin\Debug\Pessoa.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\Pessoa\bin\Debug\Pessoa.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\Pessoa\bin\Debug\Common.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\Pessoa\bin\Debug\DataAccess.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\Pessoa\bin\Debug\EntityDataAccess.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\Pessoa\bin\Debug\Model.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\Pessoa\bin\Debug\Common.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\Pessoa\bin\Debug\DataAccess.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\Pessoa\bin\Debug\EntityDataAccess.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\Pessoa\bin\Debug\Model.pdb
+E:\Projetos\ProjetosASPNet\EcommerceADO\Pessoa\obj\Debug\Pessoa.csprojResolveAssemblyReference.cache
+E:\Projetos\ProjetosASPNet\EcommerceADO\Pessoa\obj\Debug\Pessoa.dll
+E:\Projetos\ProjetosASPNet\EcommerceADO\Pessoa\obj\Debug\Pessoa.pdb

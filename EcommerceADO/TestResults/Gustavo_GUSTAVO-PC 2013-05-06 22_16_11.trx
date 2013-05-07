@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="d65e09bc-303c-4a92-8d3f-35306760337d" name="Gustavo@GUSTAVO-PC 2013-05-06 22:16:11" runUser="Gustavo-PC\Gustavo" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="659d0c57-7835-4cc7-a3e5-02c55293b527">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Gustavo_GUSTAVO-PC 2013-05-06 22_16_11">
+      <DeploymentItem filename="E:\Projetos\ProjetosASPNet\EcommerceADO\DataAccess\bin\Debug\DataAccess.dll" />
+      <DeploymentItem filename="E:\Projetos\ProjetosASPNet\EcommerceADO\Model\bin\Debug\Model.dll" />
+      <DeploymentItem filename="E:\Projetos\ProjetosASPNet\EcommerceADO\Common\bin\Debug\Common.dll" />
+      <DeploymentItem filename="E:\Projetos\ProjetosASPNet\EcommerceADO\EntityDataAccess\bin\Debug\EntityDataAccess.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-05-06T22:16:11.8193359-03:00" queuing="2013-05-06T22:16:13.0537109-03:00" start="2013-05-06T22:16:13.1953125-03:00" finish="2013-05-06T22:17:18.5380859-03:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="RetornaProdutosQuantidadesTest" storage="e:\projetos\projetosaspnet\ecommerceado\pessoa\bin\debug\pessoa.dll" id="a996afb6-2251-a462-6a57-5da21abf9569">
+      <Execution id="85610775-92ee-434b-85f3-4ca868f0dfa5" />
+      <TestMethod codeBase="E:/Projetos/ProjetosASPNet/EcommerceADO/Pessoa/bin/Debug/Pessoa.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Pessoa.ProdutoDataAccessTest, Pessoa, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="RetornaProdutosQuantidadesTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="a996afb6-2251-a462-6a57-5da21abf9569" executionId="85610775-92ee-434b-85f3-4ca868f0dfa5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="85610775-92ee-434b-85f3-4ca868f0dfa5" testId="a996afb6-2251-a462-6a57-5da21abf9569" testName="RetornaProdutosQuantidadesTest" computerName="GUSTAVO-PC" duration="00:01:03.0508415" startTime="2013-05-06T22:16:13.3623046-03:00" endTime="2013-05-06T22:17:18.3906250-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="85610775-92ee-434b-85f3-4ca868f0dfa5">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;(null)&gt;. Actual:&lt;System.Collections.Generic.List`1[Model.ProdutoRentabilidade]&gt;. </Message>
+          <StackTrace>   em Pessoa.ProdutoDataAccessTest.RetornaProdutosQuantidadesTest() na E:\Projetos\ProjetosASPNet\EcommerceADO\Pessoa\ProdutoDataAccessTest.cs:linha 81
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

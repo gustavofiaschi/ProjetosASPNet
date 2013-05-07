@@ -22,4 +22,11 @@ namespace Model
         public ProdutoCategorias Categoria { get; set; }
         public string Foto { get; set; }
     }
+
+    public class ProdutoRentabilidade
+    {
+        public Produto Produto { get; set; }
+        public decimal ValorTotal { get; set; }
+        public int QtdVendida { get; set; }
+    }
 }

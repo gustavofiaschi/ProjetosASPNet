@@ -13,7 +13,7 @@ namespace DataAccess
         public ProdutoDataAccess()
             : base()
         {
-            
+
         }
 
         public void Salvar(Produto produto)
@@ -31,7 +31,7 @@ namespace DataAccess
             int linhas = cmd.ExecuteNonQuery();
             this.Disconnect();
         }
-        
+
         public List<Produto> RetornaProdutos(ProdutoCategorias categoria = ProdutoCategorias.Todos)
         {
             string command = categoria == ProdutoCategorias.Todos ? "Select * From Produto" : "Select * from Produto where CategoriaId = @Categoria";
@@ -62,7 +62,7 @@ namespace DataAccess
 
             return listaProdutos;
         }
-        
+
         public void Atualizar(Produto produto)
         {
             SqlCommand cmd = new SqlCommand("Update Produto set Nome = @Nome, Descricao = @Descricao, Preco = @Preco, QtdEstoque = @QtdEstoque, CategoriaId = @CategoriaId, Foto = @Foto where Id = @Id", this.Connection);
@@ -88,10 +88,10 @@ namespace DataAccess
 
             this.Connect();
             SqlDataReader dr = cmd.ExecuteReader();
-            
+
             Produto produto = new Produto();
             while (dr.Read())
-            {                
+            {
                 produto.Nome = dr["Nome"].ToString();
                 produto.Descricao = dr["Descricao"].ToString();
                 produto.Preco = Convert.ToDecimal(dr["Preco"]);
@@ -102,6 +102,53 @@ namespace DataAccess
             }
 
             return produto;
+        }
+
+        /// <summary>
+        /// Retorna os produtos, quantidades vendidas e valor total das vendas.
+        /// </summary>
+        /// <param name="dataInicial"></param>
+        /// <param name="dataFinal"></param>
+        /// <returns></returns>
+        public List<ProdutoRentabilidade> RetornaProdutosQuantidades(DateTime dataInicial, DateTime dataFinal)
+        {
+            List<ProdutoRentabilidade> listaProdutos = new List<ProdutoRentabilidade>();
+
+            //Filtra os pedidos pela data
+            foreach (var pedido in this.EntityContext.Pedido.Where(p => p.Data >= dataInicial.Date && p.Data <= dataFinal.Date).ToList())
+            {                               
+                foreach (var pedProd in pedido.PedidoProduto)
+                {
+                    if (listaProdutos.Where(lp => lp.Produto.Id == pedProd.Produtos_Id).Count() == 0)
+                    {
+                        //Adiciona um novo produto
+                        ProdutoRentabilidade produtoRent = new ProdutoRentabilidade();
+                        produtoRent.QtdVendida = pedProd.Quantidade == null ? 0 : pedProd.Quantidade.Value;
+                        produtoRent.Produto = pedProd.Produto.ToProduto();
+                        produtoRent.ValorTotal = pedProd.Produto.Preco * produtoRent.QtdVendida;
+                        listaProdutos.Add(produtoRent);
+                    }
+                    else
+                    {
+                        //Acessa diretamente as propriedades para incrementa-las
+                        listaProdutos.Where(lp => lp.Produto.Id == pedProd.Produtos_Id).FirstOrDefault().QtdVendida += pedProd.Quantidade == null ? 0 : pedProd.Quantidade.Value;
+                        listaProdutos.Where(lp => lp.Produto.Id == pedProd.Produtos_Id).FirstOrDefault().ValorTotal += pedProd.Produto.Preco * pedProd.Quantidade == null ? 0 : pedProd.Quantidade.Value;
+                    }
+                }
+            }
+
+            return listaProdutos;
+        }
+
+        /// <summary>
+        /// Retorna os produtos mais rentaveis nos ultimos 6 meses
+        /// </summary>
+        /// <returns></returns>
+        public List<ProdutoRentabilidade> RetornaProdutosMaisRentaveis()
+        {
+            //6 meses antes
+            DateTime dataInicial = DateTime.Now.AddMonths(-6).Date;
+            return this.RetornaProdutosQuantidades(dataInicial, DateTime.Now.Date).Take(3).ToList();
         }
     }
 }

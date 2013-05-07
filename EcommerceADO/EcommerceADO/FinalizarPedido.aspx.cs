@@ -70,6 +70,7 @@ namespace EcommerceADO
                 Produto produto = new Produto();
                 produto.Id = id;
                 produto.Quantidade = qtd;
+                produto.Preco = decimal.Parse(lblPreco.Text);
 
                 listaProdutos.Add(produto);
             }

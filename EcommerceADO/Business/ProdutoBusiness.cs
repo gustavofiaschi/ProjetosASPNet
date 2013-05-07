@@ -12,7 +12,6 @@ namespace Business
     {
         public List<Produto> RetornaProdutos(ProdutoCategorias categoria = ProdutoCategorias.Todos)
         {
-
             return new ProdutoDataAccess().RetornaProdutos(categoria);
         }
 
@@ -62,6 +61,11 @@ namespace Business
             {
                 throw new Exception("Id da produto é 0.");
             }
+        }
+
+        public object RetornaProdutosQuantidades(DateTime dataInicial, DateTime dataFinal)
+        {
+            return new ProdutoDataAccess().RetornaProdutosQuantidades(dataInicial, dataFinal);
         }
     }
 }

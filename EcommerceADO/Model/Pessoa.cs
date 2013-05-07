@@ -24,4 +24,11 @@ namespace Model
         public string Nome { get; set; }
         public string NomeFoto { get; set; }
     }
+
+    public class PessoaGasto
+    {
+        public Pessoa Pessoa { get; set; }
+        public decimal Gastos { get; set; }
+        public Produto ProdutoMaisConsumido { get; set; }
+    }
 }

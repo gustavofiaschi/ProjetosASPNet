@@ -16,7 +16,7 @@ namespace Business
             if (usuario == null)
                 throw new Exception("Lista de Produtos está vazia");
 
-            int idPedido = new PedidoDataAccess().CriarPedido(usuario.Id, listaProdutos);
+            int idPedido = new PedidoDataAccess().CriarPedidoEntity(usuario.Id, listaProdutos);
 
             if (idPedido <= 0)
                 throw new Exception("Numero de Pedido retornado é inválido");

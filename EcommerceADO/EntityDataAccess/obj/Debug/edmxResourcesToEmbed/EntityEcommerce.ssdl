@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="EcommerceModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-  <EntityContainer Name="EcommerceModelStoreContainer">
-    <EntitySet Name="Pedido" EntityType="EcommerceModel.Store.Pedido" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PedidoProduto" EntityType="EcommerceModel.Store.PedidoProduto" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Pessoa" EntityType="EcommerceModel.Store.Pessoa" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Produto" EntityType="EcommerceModel.Store.Produto" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Usuario" EntityType="EcommerceModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK_PedidoProduto_Pedido" Association="EcommerceModel.Store.FK_PedidoProduto_Pedido">
+<Schema Namespace="EcommerceADOModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="EcommerceADOModelStoreContainer">
+    <EntitySet Name="Pedido" EntityType="EcommerceADOModel.Store.Pedido" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PedidoProduto" EntityType="EcommerceADOModel.Store.PedidoProduto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pessoa" EntityType="EcommerceADOModel.Store.Pessoa" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Produto" EntityType="EcommerceADOModel.Store.Produto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="EcommerceADOModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_PedidoProduto_Pedido" Association="EcommerceADOModel.Store.FK_PedidoProduto_Pedido">
       <End Role="Pedido" EntitySet="Pedido" />
       <End Role="PedidoProduto" EntitySet="PedidoProduto" />
     </AssociationSet>
-    <AssociationSet Name="FK_PedidoProduto_Produto" Association="EcommerceModel.Store.FK_PedidoProduto_Produto">
+    <AssociationSet Name="FK_PedidoProduto_Produto" Association="EcommerceADOModel.Store.FK_PedidoProduto_Produto">
       <End Role="Produto" EntitySet="Produto" />
       <End Role="PedidoProduto" EntitySet="PedidoProduto" />
     </AssociationSet>
-    <AssociationSet Name="FK_PessoaPedido" Association="EcommerceModel.Store.FK_PessoaPedido">
+    <AssociationSet Name="FK_PessoaPedido" Association="EcommerceADOModel.Store.FK_PessoaPedido">
       <End Role="Pessoa" EntitySet="Pessoa" />
       <End Role="Pedido" EntitySet="Pedido" />
     </AssociationSet>
-    <AssociationSet Name="FK_PessoaUsuario" Association="EcommerceModel.Store.FK_PessoaUsuario">
+    <AssociationSet Name="FK_PessoaUsuario" Association="EcommerceADOModel.Store.FK_PessoaUsuario">
       <End Role="Pessoa" EntitySet="Pessoa" />
       <End Role="Usuario" EntitySet="Usuario" />
     </AssociationSet>
@@ -74,8 +74,8 @@
     <Property Name="PessoaId" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK_PedidoProduto_Pedido">
-    <End Role="Pedido" Type="EcommerceModel.Store.Pedido" Multiplicity="1" />
-    <End Role="PedidoProduto" Type="EcommerceModel.Store.PedidoProduto" Multiplicity="*" />
+    <End Role="Pedido" Type="EcommerceADOModel.Store.Pedido" Multiplicity="1" />
+    <End Role="PedidoProduto" Type="EcommerceADOModel.Store.PedidoProduto" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Pedido">
         <PropertyRef Name="Id" />
@@ -86,8 +86,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PedidoProduto_Produto">
-    <End Role="Produto" Type="EcommerceModel.Store.Produto" Multiplicity="1" />
-    <End Role="PedidoProduto" Type="EcommerceModel.Store.PedidoProduto" Multiplicity="*" />
+    <End Role="Produto" Type="EcommerceADOModel.Store.Produto" Multiplicity="1" />
+    <End Role="PedidoProduto" Type="EcommerceADOModel.Store.PedidoProduto" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Produto">
         <PropertyRef Name="Id" />
@@ -98,8 +98,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PessoaPedido">
-    <End Role="Pessoa" Type="EcommerceModel.Store.Pessoa" Multiplicity="1" />
-    <End Role="Pedido" Type="EcommerceModel.Store.Pedido" Multiplicity="*" />
+    <End Role="Pessoa" Type="EcommerceADOModel.Store.Pessoa" Multiplicity="1" />
+    <End Role="Pedido" Type="EcommerceADOModel.Store.Pedido" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Pessoa">
         <PropertyRef Name="Id" />
@@ -110,8 +110,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PessoaUsuario">
-    <End Role="Pessoa" Type="EcommerceModel.Store.Pessoa" Multiplicity="1" />
-    <End Role="Usuario" Type="EcommerceModel.Store.Usuario" Multiplicity="*" />
+    <End Role="Pessoa" Type="EcommerceADOModel.Store.Pessoa" Multiplicity="1" />
+    <End Role="Usuario" Type="EcommerceADOModel.Store.Usuario" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Pessoa">
         <PropertyRef Name="Id" />

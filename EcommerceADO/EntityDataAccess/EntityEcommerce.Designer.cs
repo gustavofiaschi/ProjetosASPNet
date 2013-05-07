@@ -19,9 +19,10 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("EcommerceModel", "FK_PessoaPedido", "Pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityDataAccess.EPessoa), "Pedido", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityDataAccess.EPedido), true)]
-[assembly: EdmRelationshipAttribute("EcommerceModel", "FK_PessoaUsuario", "Pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityDataAccess.EPessoa), "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityDataAccess.EUsuario), true)]
-[assembly: EdmRelationshipAttribute("EcommerceModel", "PedidoProduto", "Pedido", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityDataAccess.EPedido), "Produto", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityDataAccess.EProduto))]
+[assembly: EdmRelationshipAttribute("EcommerceADOModel", "FK_PedidoProduto_Pedido", "Pedido", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityDataAccess.EPedido), "PedidoProduto", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityDataAccess.EPedidoProduto), true)]
+[assembly: EdmRelationshipAttribute("EcommerceADOModel", "FK_PessoaPedido", "Pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityDataAccess.EPessoa), "Pedido", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityDataAccess.EPedido), true)]
+[assembly: EdmRelationshipAttribute("EcommerceADOModel", "FK_PedidoProduto_Produto", "Produto", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityDataAccess.EProduto), "PedidoProduto", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityDataAccess.EPedidoProduto), true)]
+[assembly: EdmRelationshipAttribute("EcommerceADOModel", "FK_PessoaUsuario", "Pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityDataAccess.EPessoa), "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityDataAccess.EUsuario), true)]
 
 #endregion
 
@@ -32,32 +33,32 @@ namespace EntityDataAccess
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    public partial class Ecommerce2Entities : ObjectContext
+    public partial class EcommerceADOEntities1 : ObjectContext
     {
         #region Constructors
     
         /// <summary>
-        /// Initializes a new Ecommerce2Entities object using the connection string found in the 'Ecommerce2Entities' section of the application configuration file.
+        /// Initializes a new EcommerceADOEntities1 object using the connection string found in the 'EcommerceADOEntities1' section of the application configuration file.
         /// </summary>
-        public Ecommerce2Entities() : base("name=Ecommerce2Entities", "Ecommerce2Entities")
+        public EcommerceADOEntities1() : base("name=EcommerceADOEntities1", "EcommerceADOEntities1")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new Ecommerce2Entities object.
+        /// Initialize a new EcommerceADOEntities1 object.
         /// </summary>
-        public Ecommerce2Entities(string connectionString) : base(connectionString, "Ecommerce2Entities")
+        public EcommerceADOEntities1(string connectionString) : base(connectionString, "EcommerceADOEntities1")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new Ecommerce2Entities object.
+        /// Initialize a new EcommerceADOEntities1 object.
         /// </summary>
-        public Ecommerce2Entities(EntityConnection connection) : base(connection, "Ecommerce2Entities")
+        public EcommerceADOEntities1(EntityConnection connection) : base(connection, "EcommerceADOEntities1")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
@@ -88,6 +89,22 @@ namespace EntityDataAccess
             }
         }
         private ObjectSet<EPedido> _Pedido;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<EPedidoProduto> PedidoProduto
+        {
+            get
+            {
+                if ((_PedidoProduto == null))
+                {
+                    _PedidoProduto = base.CreateObjectSet<EPedidoProduto>("PedidoProduto");
+                }
+                return _PedidoProduto;
+            }
+        }
+        private ObjectSet<EPedidoProduto> _PedidoProduto;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -150,6 +167,14 @@ namespace EntityDataAccess
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the PedidoProduto EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToPedidoProduto(EPedidoProduto ePedidoProduto)
+        {
+            base.AddObject("PedidoProduto", ePedidoProduto);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the Pessoa EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToPessoa(EPessoa ePessoa)
@@ -184,7 +209,7 @@ namespace EntityDataAccess
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="EcommerceModel", Name="EPedido")]
+    [EdmEntityTypeAttribute(NamespaceName="EcommerceADOModel", Name="EPedido")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class EPedido : EntityObject
@@ -320,16 +345,38 @@ namespace EntityDataAccess
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("EcommerceModel", "FK_PessoaPedido", "Pessoa")]
+        [EdmRelationshipNavigationPropertyAttribute("EcommerceADOModel", "FK_PedidoProduto_Pedido", "PedidoProduto")]
+        public EntityCollection<EPedidoProduto> PedidoProduto
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<EPedidoProduto>("EcommerceADOModel.FK_PedidoProduto_Pedido", "PedidoProduto");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<EPedidoProduto>("EcommerceADOModel.FK_PedidoProduto_Pedido", "PedidoProduto", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EcommerceADOModel", "FK_PessoaPedido", "Pessoa")]
         public EPessoa Pessoa
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EPessoa>("EcommerceModel.FK_PessoaPedido", "Pessoa").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EPessoa>("EcommerceADOModel.FK_PessoaPedido", "Pessoa").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EPessoa>("EcommerceModel.FK_PessoaPedido", "Pessoa").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EPessoa>("EcommerceADOModel.FK_PessoaPedido", "Pessoa").Value = value;
             }
         }
         /// <summary>
@@ -341,35 +388,13 @@ namespace EntityDataAccess
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EPessoa>("EcommerceModel.FK_PessoaPedido", "Pessoa");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EPessoa>("EcommerceADOModel.FK_PessoaPedido", "Pessoa");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<EPessoa>("EcommerceModel.FK_PessoaPedido", "Pessoa", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("EcommerceModel", "PedidoProduto", "Produto")]
-        public EntityCollection<EProduto> Produto
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<EProduto>("EcommerceModel.PedidoProduto", "Produto");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<EProduto>("EcommerceModel.PedidoProduto", "Produto", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<EPessoa>("EcommerceADOModel.FK_PessoaPedido", "Pessoa", value);
                 }
             }
         }
@@ -381,7 +406,197 @@ namespace EntityDataAccess
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="EcommerceModel", Name="EPessoa")]
+    [EdmEntityTypeAttribute(NamespaceName="EcommerceADOModel", Name="EPedidoProduto")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class EPedidoProduto : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new EPedidoProduto object.
+        /// </summary>
+        /// <param name="pedidos_Id">Initial value of the Pedidos_Id property.</param>
+        /// <param name="produtos_Id">Initial value of the Produtos_Id property.</param>
+        public static EPedidoProduto CreateEPedidoProduto(global::System.Int32 pedidos_Id, global::System.Int32 produtos_Id)
+        {
+            EPedidoProduto ePedidoProduto = new EPedidoProduto();
+            ePedidoProduto.Pedidos_Id = pedidos_Id;
+            ePedidoProduto.Produtos_Id = produtos_Id;
+            return ePedidoProduto;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Pedidos_Id
+        {
+            get
+            {
+                return _Pedidos_Id;
+            }
+            set
+            {
+                if (_Pedidos_Id != value)
+                {
+                    OnPedidos_IdChanging(value);
+                    ReportPropertyChanging("Pedidos_Id");
+                    _Pedidos_Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Pedidos_Id");
+                    OnPedidos_IdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Pedidos_Id;
+        partial void OnPedidos_IdChanging(global::System.Int32 value);
+        partial void OnPedidos_IdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Produtos_Id
+        {
+            get
+            {
+                return _Produtos_Id;
+            }
+            set
+            {
+                if (_Produtos_Id != value)
+                {
+                    OnProdutos_IdChanging(value);
+                    ReportPropertyChanging("Produtos_Id");
+                    _Produtos_Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Produtos_Id");
+                    OnProdutos_IdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Produtos_Id;
+        partial void OnProdutos_IdChanging(global::System.Int32 value);
+        partial void OnProdutos_IdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Quantidade
+        {
+            get
+            {
+                return _Quantidade;
+            }
+            set
+            {
+                OnQuantidadeChanging(value);
+                ReportPropertyChanging("Quantidade");
+                _Quantidade = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Quantidade");
+                OnQuantidadeChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Quantidade;
+        partial void OnQuantidadeChanging(Nullable<global::System.Int32> value);
+        partial void OnQuantidadeChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EcommerceADOModel", "FK_PedidoProduto_Pedido", "Pedido")]
+        public EPedido Pedido
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EPedido>("EcommerceADOModel.FK_PedidoProduto_Pedido", "Pedido").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EPedido>("EcommerceADOModel.FK_PedidoProduto_Pedido", "Pedido").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<EPedido> PedidoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EPedido>("EcommerceADOModel.FK_PedidoProduto_Pedido", "Pedido");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<EPedido>("EcommerceADOModel.FK_PedidoProduto_Pedido", "Pedido", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EcommerceADOModel", "FK_PedidoProduto_Produto", "Produto")]
+        public EProduto Produto
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EProduto>("EcommerceADOModel.FK_PedidoProduto_Produto", "Produto").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EProduto>("EcommerceADOModel.FK_PedidoProduto_Produto", "Produto").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<EProduto> ProdutoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EProduto>("EcommerceADOModel.FK_PedidoProduto_Produto", "Produto");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<EProduto>("EcommerceADOModel.FK_PedidoProduto_Produto", "Produto", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="EcommerceADOModel", Name="EPessoa")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class EPessoa : EntityObject
@@ -541,18 +756,18 @@ namespace EntityDataAccess
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("EcommerceModel", "FK_PessoaPedido", "Pedido")]
+        [EdmRelationshipNavigationPropertyAttribute("EcommerceADOModel", "FK_PessoaPedido", "Pedido")]
         public EntityCollection<EPedido> Pedido
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<EPedido>("EcommerceModel.FK_PessoaPedido", "Pedido");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<EPedido>("EcommerceADOModel.FK_PessoaPedido", "Pedido");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<EPedido>("EcommerceModel.FK_PessoaPedido", "Pedido", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<EPedido>("EcommerceADOModel.FK_PessoaPedido", "Pedido", value);
                 }
             }
         }
@@ -563,18 +778,18 @@ namespace EntityDataAccess
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("EcommerceModel", "FK_PessoaUsuario", "Usuario")]
+        [EdmRelationshipNavigationPropertyAttribute("EcommerceADOModel", "FK_PessoaUsuario", "Usuario")]
         public EntityCollection<EUsuario> Usuario
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<EUsuario>("EcommerceModel.FK_PessoaUsuario", "Usuario");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<EUsuario>("EcommerceADOModel.FK_PessoaUsuario", "Usuario");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<EUsuario>("EcommerceModel.FK_PessoaUsuario", "Usuario", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<EUsuario>("EcommerceADOModel.FK_PessoaUsuario", "Usuario", value);
                 }
             }
         }
@@ -586,7 +801,7 @@ namespace EntityDataAccess
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="EcommerceModel", Name="EProduto")]
+    [EdmEntityTypeAttribute(NamespaceName="EcommerceADOModel", Name="EProduto")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class EProduto : EntityObject
@@ -744,30 +959,6 @@ namespace EntityDataAccess
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> CategoriaId
-        {
-            get
-            {
-                return _CategoriaId;
-            }
-            set
-            {
-                OnCategoriaIdChanging(value);
-                ReportPropertyChanging("CategoriaId");
-                _CategoriaId = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CategoriaId");
-                OnCategoriaIdChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _CategoriaId;
-        partial void OnCategoriaIdChanging(Nullable<global::System.Int32> value);
-        partial void OnCategoriaIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
         public global::System.String Foto
         {
             get
@@ -786,6 +977,30 @@ namespace EntityDataAccess
         private global::System.String _Foto;
         partial void OnFotoChanging(global::System.String value);
         partial void OnFotoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> CategoriaId
+        {
+            get
+            {
+                return _CategoriaId;
+            }
+            set
+            {
+                OnCategoriaIdChanging(value);
+                ReportPropertyChanging("CategoriaId");
+                _CategoriaId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CategoriaId");
+                OnCategoriaIdChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _CategoriaId;
+        partial void OnCategoriaIdChanging(Nullable<global::System.Int32> value);
+        partial void OnCategoriaIdChanged();
 
         #endregion
 
@@ -798,18 +1013,18 @@ namespace EntityDataAccess
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("EcommerceModel", "PedidoProduto", "Pedido")]
-        public EntityCollection<EPedido> Pedido
+        [EdmRelationshipNavigationPropertyAttribute("EcommerceADOModel", "FK_PedidoProduto_Produto", "PedidoProduto")]
+        public EntityCollection<EPedidoProduto> PedidoProduto
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<EPedido>("EcommerceModel.PedidoProduto", "Pedido");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<EPedidoProduto>("EcommerceADOModel.FK_PedidoProduto_Produto", "PedidoProduto");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<EPedido>("EcommerceModel.PedidoProduto", "Pedido", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<EPedidoProduto>("EcommerceADOModel.FK_PedidoProduto_Produto", "PedidoProduto", value);
                 }
             }
         }
@@ -821,7 +1036,7 @@ namespace EntityDataAccess
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="EcommerceModel", Name="EUsuario")]
+    [EdmEntityTypeAttribute(NamespaceName="EcommerceADOModel", Name="EUsuario")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class EUsuario : EntityObject
@@ -985,16 +1200,16 @@ namespace EntityDataAccess
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("EcommerceModel", "FK_PessoaUsuario", "Pessoa")]
+        [EdmRelationshipNavigationPropertyAttribute("EcommerceADOModel", "FK_PessoaUsuario", "Pessoa")]
         public EPessoa Pessoa
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EPessoa>("EcommerceModel.FK_PessoaUsuario", "Pessoa").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EPessoa>("EcommerceADOModel.FK_PessoaUsuario", "Pessoa").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EPessoa>("EcommerceModel.FK_PessoaUsuario", "Pessoa").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EPessoa>("EcommerceADOModel.FK_PessoaUsuario", "Pessoa").Value = value;
             }
         }
         /// <summary>
@@ -1006,13 +1221,13 @@ namespace EntityDataAccess
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EPessoa>("EcommerceModel.FK_PessoaUsuario", "Pessoa");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<EPessoa>("EcommerceADOModel.FK_PessoaUsuario", "Pessoa");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<EPessoa>("EcommerceModel.FK_PessoaUsuario", "Pessoa", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<EPessoa>("EcommerceADOModel.FK_PessoaUsuario", "Pessoa", value);
                 }
             }
         }

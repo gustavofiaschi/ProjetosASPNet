@@ -1,18 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="EcommerceModelStoreContainer" CdmEntityContainer="Ecommerce2Entities">
+  <EntityContainerMapping StorageEntityContainer="EcommerceADOModelStoreContainer" CdmEntityContainer="EcommerceADOEntities1">
     <EntitySetMapping Name="Pedido">
-      <EntityTypeMapping TypeName="EcommerceModel.EPedido">
+      <EntityTypeMapping TypeName="EcommerceADOModel.EPedido">
         <MappingFragment StoreEntitySet="Pedido">
-          <ScalarProperty Name="PrecoTotal" ColumnName="PrecoTotal" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Data" ColumnName="Data" />
           <ScalarProperty Name="PessoaId" ColumnName="PessoaId" />
+          <ScalarProperty Name="PrecoTotal" ColumnName="PrecoTotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PedidoProduto">
+      <EntityTypeMapping TypeName="EcommerceADOModel.EPedidoProduto">
+        <MappingFragment StoreEntitySet="PedidoProduto">
+          <ScalarProperty Name="Pedidos_Id" ColumnName="Pedidos_Id" />
+          <ScalarProperty Name="Produtos_Id" ColumnName="Produtos_Id" />
+          <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Pessoa">
-      <EntityTypeMapping TypeName="EcommerceModel.EPessoa">
+      <EntityTypeMapping TypeName="EcommerceADOModel.EPessoa">
         <MappingFragment StoreEntitySet="Pessoa">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
@@ -23,20 +32,20 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Produto">
-      <EntityTypeMapping TypeName="EcommerceModel.EProduto">
+      <EntityTypeMapping TypeName="EcommerceADOModel.EProduto">
         <MappingFragment StoreEntitySet="Produto">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
           <ScalarProperty Name="Descricao" ColumnName="Descricao" />
           <ScalarProperty Name="Preco" ColumnName="Preco" />
           <ScalarProperty Name="QtdEstoque" ColumnName="QtdEstoque" />
-          <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
           <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Usuario">
-      <EntityTypeMapping TypeName="EcommerceModel.EUsuario">
+      <EntityTypeMapping TypeName="EcommerceADOModel.EUsuario">
         <MappingFragment StoreEntitySet="Usuario">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Login" ColumnName="Login" />
@@ -46,13 +55,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="PedidoProduto" TypeName="EcommerceModel.PedidoProduto" StoreEntitySet="PedidoProduto">
-      <EndProperty Name="Pedido">
-        <ScalarProperty Name="Id" ColumnName="Pedidos_Id" />
-      </EndProperty>
-      <EndProperty Name="Produto">
-        <ScalarProperty Name="Id" ColumnName="Produtos_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>
